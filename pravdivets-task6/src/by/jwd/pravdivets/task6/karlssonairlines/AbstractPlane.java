@@ -2,6 +2,9 @@ package by.jwd.pravdivets.task6.karlssonairlines;
 
 public abstract class AbstractPlane {
 
+	PlaneModel model;
+	int manufactYear;
+	
 	double length;
 	double wingSpan; //размах крыла
 	double height;
@@ -13,6 +16,14 @@ public abstract class AbstractPlane {
 	//for passangers
 	int seatsEconomy;
 	int seatsBusiness;
+	
+	public abstract void fly();
+
+	@Override
+	public String toString() {
+		return getClass().getSimpleName() + " - [model=" + model + ", manufactYear=" + manufactYear + "]";
+	}
+	
 	
 	/*
 	 * Типы самолетов

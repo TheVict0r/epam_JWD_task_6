@@ -1,6 +1,6 @@
 package by.jwd.pravdivets.task6.karlssonairlines;
 
-public enum Destinations {
+public enum Destination {
 
 	MOSCOW(728),
 	KIEV(542),
@@ -11,7 +11,7 @@ public enum Destinations {
 	
 	int distance;
 	
-	Destinations(int distance){
+	Destination(int distance){
 		this.distance = distance;
 	}
 	

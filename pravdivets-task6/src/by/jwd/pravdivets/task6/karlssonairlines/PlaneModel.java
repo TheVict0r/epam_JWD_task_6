@@ -1,6 +1,6 @@
 package by.jwd.pravdivets.task6.karlssonairlines;
 
-public enum PlaneModels {
+public enum PlaneModel {
 
 	BOEING_377,
 	BOEING_737MAX,
