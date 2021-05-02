@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonaerolines;
+package by.jwd.pravdivets.task6.karlssonairlines;
 
 public enum Destinations {
 
