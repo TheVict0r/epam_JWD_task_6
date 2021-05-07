@@ -1,9 +1,13 @@
-package by.jwd.pravdivets.task6.karlssonairlines;
+package by.jwd.pravdivets.task6.karlssonairlines.entity;
+
+import by.jwd.pravdivets.task6.karlssonairlines.PlaneModel;
 
 public abstract class AbstractPlane {
 
 	PlaneModel model;
 	int manufactYear;
+	
+	
 	
 	double length;
 	double wingSpan; //размах крыла
@@ -29,6 +33,8 @@ public abstract class AbstractPlane {
 	 * Типы самолетов
 	 * 
 	 * Пассажирский - Airliner
+	 * Легкий - LightJet
+	 * Тяжелый реактивный HeavyJet
 	 * транспортные - Cargo aircraft
 	 * Почтовый - Mail plane
 	 * 
