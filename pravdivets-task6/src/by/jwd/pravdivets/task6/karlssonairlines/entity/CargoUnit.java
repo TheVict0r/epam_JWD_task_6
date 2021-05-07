@@ -78,7 +78,7 @@ public abstract class CargoUnit implements Serializable{
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + "[weight - " + weight + ", capacity - " + capacity + "]";
+		return getClass().getSimpleName() + "[id - " + id + ", weight - " + weight + ", capacity - " + capacity + "]";
 	}
 
 	
