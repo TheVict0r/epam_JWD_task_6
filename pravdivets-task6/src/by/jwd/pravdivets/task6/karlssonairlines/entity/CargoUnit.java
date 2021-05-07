@@ -62,6 +62,26 @@ public abstract class CargoUnit implements Serializable{
 		double
 	}
 
+	/*
+	 * 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(capacity);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(weight);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	 */
+	
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return getClass().getSimpleName() + "[weight - " + weight + ", capacity - " + capacity + "]";
