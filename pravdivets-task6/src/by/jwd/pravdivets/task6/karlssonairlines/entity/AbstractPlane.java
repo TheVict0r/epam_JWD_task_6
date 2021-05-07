@@ -28,8 +28,6 @@ public abstract class AbstractPlane {
 		return getClass().getSimpleName() + " - [model=" + model + ", manufactYear=" + manufactYear + "]";
 	}
 	
-	
-	
 	/*
 	 * Типы самолетов
 	 * 
