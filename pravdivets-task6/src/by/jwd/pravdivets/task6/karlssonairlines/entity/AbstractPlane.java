@@ -29,6 +29,7 @@ public abstract class AbstractPlane {
 	}
 	
 	
+	
 	/*
 	 * Типы самолетов
 	 * 
