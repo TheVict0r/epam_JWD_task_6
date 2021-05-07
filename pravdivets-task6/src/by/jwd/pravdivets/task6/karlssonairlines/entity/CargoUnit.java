@@ -1,6 +1,9 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity;
 
-public abstract class CargoUnit {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public abstract class CargoUnit implements Serializable{
 	
 	private String name;
 	private double weight;
