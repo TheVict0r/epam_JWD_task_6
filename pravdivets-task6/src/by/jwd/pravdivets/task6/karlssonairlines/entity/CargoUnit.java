@@ -5,14 +5,24 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public abstract class CargoUnit implements Serializable{
 	
+	private int id; // без id было бы невозможно корректно реализовать hash code и equals
 	private int weight;
 	private int capacity;
 		
 	public CargoUnit() { }
 	
-	public CargoUnit (int weight, int capacity) {
+	public CargoUnit (int id, int weight, int capacity) {
+		this.id = id;
 		this.weight = weight;
 		this.capacity = capacity;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public double getCapacity() {
@@ -31,7 +41,6 @@ public abstract class CargoUnit implements Serializable{
 		this.weight = weight;
 	}
 
-	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -44,6 +53,9 @@ public abstract class CargoUnit implements Serializable{
 			return false;
 		}
 		CargoUnit unit = (CargoUnit) o;
+		if (this.id != unit.getId()) {
+			return false;
+		}
 		if (this.weight != unit.getWeight()){
 			return false;
 		}
@@ -63,7 +75,7 @@ public abstract class CargoUnit implements Serializable{
 		return result;
 	}
 
-	
+
 	@Override
 	public String toString() {
 		return getClass().getSimpleName() + "[weight - " + weight + ", capacity - " + capacity + "]";
