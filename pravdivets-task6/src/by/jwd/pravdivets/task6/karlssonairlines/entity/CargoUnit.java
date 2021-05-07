@@ -7,14 +7,14 @@ public abstract class CargoUnit implements Serializable{
 	
 	private int id; // без id было бы невозможно корректно реализовать hash code и equals
 	private int weight;
-	private int capacity;
+	
 		
 	public CargoUnit() { }
 	
-	public CargoUnit (int id, int weight, int capacity) {
+	public CargoUnit (int id, int weight) {
 		this.id = id;
 		this.weight = weight;
-		this.capacity = capacity;
+		
 	}
 
 	public int getId() {
@@ -23,14 +23,6 @@ public abstract class CargoUnit implements Serializable{
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public double getCapacity() {
-		return capacity;
-	}
-
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
 	}
 
 	public double getWeight() {
@@ -59,9 +51,7 @@ public abstract class CargoUnit implements Serializable{
 		if (this.weight != unit.getWeight()){
 			return false;
 		}
-		if (this.capacity != unit.getCapacity()){
-			return false;
-		} else {
+		else {
 			return true;
 		}
 	}	
@@ -71,14 +61,14 @@ public abstract class CargoUnit implements Serializable{
 		final int meaning = 42;
 		int result = 1;
 		result = result * meaning * meaning + meaning + weight;
-		result = result * meaning * meaning + meaning + capacity;
+		result = result * meaning * meaning + meaning + id;
 		return result;
 	}
 
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + "[id - " + id + ", weight - " + weight + ", capacity - " + capacity + "]";
+		return getClass().getSimpleName() + ": [id - " + id + ", weight - " + weight;
 	}
 
 	
