@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Shipment extends CargoUnit implements Serializable{
-	
-	private int id; 
-	private int weight;
-	
+
 	private int capacity;
 	private double price ;
 	
