@@ -5,12 +5,12 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public abstract class CargoUnit implements Serializable{
 	
-	private double weight;
-	private double capacity;
+	private int weight;
+	private int capacity;
 		
 	public CargoUnit() { }
 	
-	public CargoUnit (double weight, double capacity) {
+	public CargoUnit (int weight, int capacity) {
 		this.weight = weight;
 		this.capacity = capacity;
 	}
@@ -19,7 +19,7 @@ public abstract class CargoUnit implements Serializable{
 		return capacity;
 	}
 
-	public void setCapacity(double capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
 
@@ -44,10 +44,10 @@ public abstract class CargoUnit implements Serializable{
 			return false;
 		}
 		CargoUnit unit = (CargoUnit) o;
-		if (Double.doubleToLongBits(this.weight) != Double.doubleToLongBits(unit.getWeight())){
+		if (this.weight != unit.getWeight()){
 			return false;
 		}
-		if (Double.doubleToLongBits(this.capacity) != Double.doubleToLongBits(unit.getCapacity())){
+		if (this.capacity != unit.getCapacity()){
 			return false;
 		} else {
 			return true;
@@ -58,33 +58,16 @@ public abstract class CargoUnit implements Serializable{
 	public int hashCode() {
 		final int meaning = 42;
 		int result = 1;
-		
-		double
-	}
-
-	/*
-	 * 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(capacity);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(weight);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = result * meaning * meaning + meaning + weight;
+		result = result * meaning * meaning + meaning + capacity;
 		return result;
 	}
 
-	 */
-	
-	
-	
-	
-	
 	
 	@Override
 	public String toString() {
 		return getClass().getSimpleName() + "[weight - " + weight + ", capacity - " + capacity + "]";
 	}
+
 	
 }
