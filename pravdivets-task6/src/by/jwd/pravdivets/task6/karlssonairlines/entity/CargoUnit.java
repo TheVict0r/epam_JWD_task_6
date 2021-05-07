@@ -13,7 +13,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public abstract class CargoUnit implements Serializable{
 	
-	private int id; // без id было бы невозможно корректно реализовать hash code и equals
+	private int id; 
 	private int weight;
 	
 		
