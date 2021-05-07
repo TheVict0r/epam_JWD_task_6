@@ -8,11 +8,10 @@ public abstract class AbstractPlane {
 	int manufactYear;
 	
 	
-	
 	double length;
 	double wingSpan; //размах крыла
 	double height;
-	double maxLandWeight; // максимальный посадочный вес
+	
 	double maxCommercialLoad; //макс. коммерческая загрузка
 	int flightRange; //дальность полета с макс. загрузкой
 	int maxSpeed; //макс. крейсерская скорость

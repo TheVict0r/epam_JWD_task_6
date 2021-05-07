@@ -1,11 +1,13 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity;
 
-public abstract class Cargo {
+public abstract class CargoUnit {
 	
 	private String name;
-	private int weight;
+	private double weight;
+		
 	
-	public Cargo (String name, int weight) {
+	
+	public CargoUnit (String name, double weight) {
 		this.name = name;
 		this.weight = weight;
 	}
@@ -18,11 +20,11 @@ public abstract class Cargo {
 		this.name = name;
 	}
 
-	public int getWeight() {
+	public double getUnitWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setUnitWeight(int weight) {
 		this.weight = weight;
 	}
 	
