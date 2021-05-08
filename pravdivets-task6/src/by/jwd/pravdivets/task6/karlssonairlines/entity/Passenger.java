@@ -55,7 +55,7 @@ public class Passenger extends CargoUnit implements Serializable{
 	
 	@Override
 	public String toString() {
-		return super.toString() + (businessClass ? "business class" : "economy class") + "]";
+		return super.toString() + ", " + (businessClass ? "business class" : "economy class") + "]";
 	}
 	
 	
