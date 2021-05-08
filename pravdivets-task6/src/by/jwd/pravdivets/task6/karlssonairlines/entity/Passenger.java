@@ -3,14 +3,14 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Passanger extends CargoUnit implements Serializable{
+public class Passenger extends CargoUnit implements Serializable{
 
 	private int luggageWeight; //багаж будем учитывать вместе с пассажиром. С точки зрения авиакомпании прописывать отдельно смысла нет. 
 	boolean businessClass;
 	
-	public Passanger() { }
+	public Passenger() { }
 	
-	public Passanger(int id, int weight, int luggageWeight) {
+	public Passenger(int id, int weight, int luggageWeight) {
 		super(id, weight);
 		this.luggageWeight = luggageWeight;
 		this.businessClass = businessClass;
@@ -62,7 +62,7 @@ public class Passanger extends CargoUnit implements Serializable{
 		if (!super.equals(o)) {
 			return false;
 		}
-		Passanger passanger = (Passanger) o;
+		Passenger passanger = (Passenger) o;
 
 		if (this.luggageWeight != passanger.luggageWeight) {
 			return false;
