@@ -17,17 +17,17 @@ public abstract class CargoUnit implements Serializable{
 	private int weight;
 	
 		
-	public CargoUnit() { }
-	
-	public CargoUnit (int id, int weight) {
+	public CargoUnit() {
+	}
+
+	public CargoUnit(int id) {
+		this.id = id;
+	}
+
+	public CargoUnit(int id, int weight) {
 		this.id = id;
 		this.weight = weight;
-		
-	}
-	
-	public CargoUnit (int id) {
-		this.id = id;
-		
+
 	}
 
 	public int getId() {

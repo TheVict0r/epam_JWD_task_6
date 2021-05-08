@@ -11,15 +11,18 @@ public class Passenger extends CargoUnit implements Serializable{
 	public final int HUMAN_WEIGHT_AVERAGE = 80;
 	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
-	//вес багажа будем учитывать вместе с пассажиром. С точки зрения авиакомпании прописывать багаж отдельно смысла нет. 
-	int weightTotal = HUMAN_WEIGHT_AVERAGE + (businessClass ? LUGGAGE_WEIGHT_BUSINESS : LUGGAGE_WEIGHT_ECONOMY);
-
+	//Вес багажа будем учитывать вместе с пассажиром. 
+	//С точки зрения авиакомпании прописывать багаж отдельно смысла нет. 
+	private double ticketPrice;
+	
+	
+	
 	public Passenger() { }
 	
-	public Passenger(int id,  boolean businessClass) {
+	public Passenger(int id, boolean businessClass, double ticketPrice) {
 		super(id);
 		this.businessClass = businessClass;
-		super.setWeight(weightTotal);
+		super.setWeight(HUMAN_WEIGHT_AVERAGE + (businessClass ? LUGGAGE_WEIGHT_BUSINESS : LUGGAGE_WEIGHT_ECONOMY));
 	}
 
 
@@ -47,7 +50,7 @@ public class Passenger extends CargoUnit implements Serializable{
 		if (this.businessClass != passanger.businessClass) {
 			return false;
 		}
-		if (this.weightTotal != passanger.weightTotal) {
+		if (super.getWeight() != passanger.getWeight()) {
 			return false;
 		}
 		return true;

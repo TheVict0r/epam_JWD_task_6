@@ -46,11 +46,16 @@ public class Shipment extends CargoUnit implements Serializable{
 			if (this.capacity != shipment.capacity) {
 				return false;
 			}
-			if (this.price != shipment.price) {
+			
+			if (Double.doubleToLongBits(this.price) != 
+				Double.doubleToLongBits(shipment.price)) {
 				return false;
 			}
 			return true;
 	}
+	
+	
+	
 	
 	@Override
 	public int hashCode() {
