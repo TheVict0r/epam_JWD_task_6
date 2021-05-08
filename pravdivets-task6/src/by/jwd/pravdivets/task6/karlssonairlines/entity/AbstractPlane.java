@@ -2,6 +2,8 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity;
 
 import java.util.Arrays;
 
+import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Cargo;
+
 public abstract class AbstractPlane {
 
 	private int id;
@@ -9,7 +11,7 @@ public abstract class AbstractPlane {
 	private int maxLoad; //Макс. коммерческая загрузка (кг)
 	private int currentLoad; 
 	private int flightRange; //Дальность полета с макс. загрузкой (км)	
-	private int maxSpeed; //Макс. крейсерская скорость (км/ч)
+	private int cruiseSpeed; //Крейсерская скорость (км/ч)
 	private int fuelConsumption; //Часовой расход топлива (кг)
 	private Cargo[] cargo;
 	/*
@@ -28,13 +30,13 @@ public abstract class AbstractPlane {
 		
 	}
 	
-	public AbstractPlane(int id, int manufactYear, int maxLoad, int flightRange, int maxSpeed,
+	public AbstractPlane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
 			int fuelConsumption, Cargo[] cargo) {
 		this.id = id;
 		this.manufactYear = manufactYear;
 		this.maxLoad = maxLoad;
 		this.flightRange = flightRange;
-		this.maxSpeed = maxSpeed;
+		this.cruiseSpeed = cruiseSpeed;
 		this.fuelConsumption = fuelConsumption;
 		this.cargo = cargo;
 	}
@@ -70,8 +72,8 @@ public abstract class AbstractPlane {
 	}
 
 
-	public int getMaxSpeed() {
-		return maxSpeed;
+	public int getCruiseSpeed() {
+		return cruiseSpeed;
 	}
 
 
@@ -106,8 +108,8 @@ public abstract class AbstractPlane {
 	}
 
 
-	public void setMaxSpeed(int maxSpeed) {
-		this.maxSpeed = maxSpeed;
+	public void setCruiseSpeed(int cruiseSpeed) {
+		this.cruiseSpeed = cruiseSpeed;
 	}
 
 
@@ -137,7 +139,7 @@ public abstract class AbstractPlane {
 		result = prime * result + id;
 		result = prime * result + manufactYear;
 		result = prime * result + maxLoad;
-		result = prime * result + maxSpeed;
+		result = prime * result + cruiseSpeed;
 		return result;
 	}
 
@@ -160,7 +162,7 @@ public abstract class AbstractPlane {
 			return false;
 		if (maxLoad != other.maxLoad)
 			return false;
-		if (maxSpeed != other.maxSpeed)
+		if (cruiseSpeed != other.cruiseSpeed)
 			return false;
 		if (!Arrays.equals(cargo, other.cargo))
 			return false;

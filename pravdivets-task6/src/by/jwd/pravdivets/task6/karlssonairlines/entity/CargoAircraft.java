@@ -1,4 +1,7 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity;
+
+import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
+
 // грузовой
 public class CargoAircraft extends AbstractPlane{
 
