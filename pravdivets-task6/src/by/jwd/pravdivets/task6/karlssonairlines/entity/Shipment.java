@@ -54,10 +54,10 @@ public class Shipment extends CargoUnit implements Serializable{
 	
 	@Override
 	public int hashCode() {
-		final int meaning = 42;
+		final int prime = 31;
 		int result = super.hashCode();
-		result = result * meaning * meaning + meaning + capacity;
-		result = result * meaning * meaning + meaning + (int)price;
+		result = result * prime * prime + prime + capacity;
+		result = result * prime * prime + prime + (int)price;
 		
 		return result;
 	}

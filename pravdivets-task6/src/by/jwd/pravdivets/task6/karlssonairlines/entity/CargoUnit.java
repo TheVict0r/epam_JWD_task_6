@@ -66,10 +66,10 @@ public abstract class CargoUnit implements Serializable{
 	
 	@Override
 	public int hashCode() {
-		final int meaning = 42;
+		final int prime = 31;
 		int result = 1;
-		result = result * meaning * meaning + meaning + weight;
-		result = result * meaning * meaning + meaning + id;
+		result = result * prime * prime + prime + weight;
+		result = result * prime * prime + prime + id;
 		return result;
 	}
 
