@@ -3,7 +3,7 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Passenger extends CargoUnit implements Serializable{
+public class Passenger extends Cargo implements Serializable{
 
 	
 	boolean businessClass;

@@ -9,18 +9,15 @@ public abstract class AbstractPlane {
 	PlaneModel model;
 	int manufactYear;
 	
-	double length;
-	double wingSpan; //размах крыла
-	double height;
+//	double length;
+//	double wingSpan; //размах крыла
+//	double height;
 	
 	double maxCommercialLoad; //макс. коммерческая загрузка
 	int flightRange; //дальность полета с макс. загрузкой
 	int maxSpeed; //макс. крейсерская скорость
 	
-	//for passangers
-	int seatsEconomy;
-	int seatsBusiness;
-	
+
 	public abstract void fly();
 
 	
