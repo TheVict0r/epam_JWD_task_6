@@ -24,6 +24,11 @@ public abstract class CargoUnit implements Serializable{
 		this.weight = weight;
 		
 	}
+	
+	public CargoUnit (int id) {
+		this.id = id;
+		
+	}
 
 	public int getId() {
 		return id;
