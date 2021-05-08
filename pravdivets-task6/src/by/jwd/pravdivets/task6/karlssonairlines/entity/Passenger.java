@@ -5,7 +5,6 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Passenger extends Cargo implements Serializable{
 
-	
 	boolean businessClass;
 	
 	public final int HUMAN_WEIGHT_AVERAGE = 80;
@@ -13,18 +12,14 @@ public class Passenger extends Cargo implements Serializable{
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
 	//Вес багажа будем учитывать вместе с пассажиром. 
 	//С точки зрения авиакомпании прописывать багаж отдельно смысла нет. 
-	private double ticketPrice;
-	
-	
 	
 	public Passenger() { }
 	
-	public Passenger(int id, boolean businessClass, double ticketPrice) {
-		super(id);
+	public Passenger(int id, double ticketPrice, boolean businessClass) {
+		super(id, ticketPrice);
 		this.businessClass = businessClass;
 		super.setWeight(HUMAN_WEIGHT_AVERAGE + (businessClass ? LUGGAGE_WEIGHT_BUSINESS : LUGGAGE_WEIGHT_ECONOMY));
 	}
-
 
 	public boolean isBusinessClass() {
 		return businessClass;
@@ -33,6 +28,7 @@ public class Passenger extends Cargo implements Serializable{
 	public void setBusinessClass(boolean businessClass) {
 		this.businessClass = businessClass;
 	}
+
 
 	@Override
 	public boolean equals(Object o) {
