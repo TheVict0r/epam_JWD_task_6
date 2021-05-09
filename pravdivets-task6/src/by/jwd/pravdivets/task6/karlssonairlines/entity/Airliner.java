@@ -12,6 +12,7 @@ public abstract class Airliner extends AbstractPlane implements Serializable{
 	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
 	 //(businessClass ? LUGGAGE_WEIGHT_BUSINESS : LUGGAGE_WEIGHT_ECONOMY)
+	
 	private Passenger[] passengers; //массив позволит работать с отдельными пассажирами в случае необходимости
 	
 	public Airliner() {
@@ -48,7 +49,6 @@ public abstract class Airliner extends AbstractPlane implements Serializable{
 			return true;
 		if (getClass() != obj.getClass())
 			return false;
-
 		if (!super.equals(obj))
 			return false;
 		Airliner other = (Airliner) obj;

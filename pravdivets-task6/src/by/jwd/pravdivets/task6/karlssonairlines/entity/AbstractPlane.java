@@ -158,8 +158,7 @@ public abstract class AbstractPlane {
 	
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [id=" + id + ", manufactYear=" + manufactYear + 
-				", currentLoad=" + currentLoad;
+		return getClass().getSimpleName() + " [ID = " + id + ", year of manufactory = " + manufactYear;
 	}
 
 

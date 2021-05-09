@@ -12,8 +12,7 @@ public class An124 extends CargoAircraft implements Serializable {
 		
 	}
 
-	public An124(int id, int manufactYear, int fuelConsumption,
-			Shipment shipment) {
+	public An124(int id, int manufactYear, Shipment shipment) {
 		super(id, manufactYear, 120_000, 5400, 825, 12600, shipment);
 		
 	}

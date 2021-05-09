@@ -56,6 +56,6 @@ public class CargoAircraft extends AbstractPlane implements Serializable{
 	
 	@Override
 	public String toString() {
-		return super.toString() + ", maximum load - " +  super.getMaxLoad() + "]";
+		return super.toString() + ", maximum load - " +  super.getMaxLoad() + " kg]";
 	}
 }

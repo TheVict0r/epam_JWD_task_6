@@ -5,16 +5,15 @@ import java.io.Serializable;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 
-//источник - https://www.airlines-inform.ru/commercial-aircraft/boeing-737-800.html
-@SuppressWarnings("serial")
-public class Boening737800 extends Airliner implements Serializable {
+//источник https://www.airlines-inform.ru/commercial-aircraft/boeing-737-500.html
+public class Boeing737500 extends Airliner  implements Serializable {
 
-	public Boening737800() {
+	public Boeing737500() {
 		
 	}
 	
-	public Boening737800(int id, int manufactYear) {
-		super(id, manufactYear, 20540, 5400, 850, 2526, new Passenger[189]);
+	public Boeing737500(int id, int manufactYear) {
+		super(id, manufactYear, 14770, 3400, 795, 2400, new Passenger[132]);
 		
 	}
 	
@@ -43,6 +42,5 @@ public class Boening737800 extends Airliner implements Serializable {
 	}
 	
 
-	
 	
 }
