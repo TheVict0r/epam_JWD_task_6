@@ -20,7 +20,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 
-public class Airline {
+public class AirlineCompany {
 
 	CargoLoader loader = new CargoLoader();
 
