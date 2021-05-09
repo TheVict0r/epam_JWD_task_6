@@ -13,12 +13,11 @@ public abstract class AbstractPlane {
 	private int flightRange; //Дальность полета с макс. загрузкой (км)	
 	private int cruiseSpeed; //Крейсерская скорость (км/ч)
 	private int fuelConsumption; //Часовой расход топлива (кг)
-	private Cargo[] cargo;
 	/*
 	 * При решении задачи я исходил из следующей идеи: 
-	 * Основополагающим признаком, определяющим направления деятельности авикомпании, 
+	 * Основополагающим признаком, определяющим тип самолета, 
 	 * является характер груза, который будет перевозиться - люди, товары и т.д. 
-	 * Именно груз обуславливает выбор типа самолёта и его конкретные характеристики. 
+	 * Именно груз обуславливает назначение самолета и его технические характеристики. 
 	 */
 	
 	public int getId() {
@@ -31,24 +30,13 @@ public abstract class AbstractPlane {
 	}
 	
 	public AbstractPlane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
-			int fuelConsumption, Cargo[] cargo) {
+			int fuelConsumption) {
 		this.id = id;
 		this.manufactYear = manufactYear;
 		this.maxLoad = maxLoad;
 		this.flightRange = flightRange;
 		this.cruiseSpeed = cruiseSpeed;
 		this.fuelConsumption = fuelConsumption;
-		this.cargo = cargo;
-	}
-
-
-	public Cargo[] getCargo() {
-		return cargo;
-	}
-
-
-	public void setCargo(Cargo[] cargo) {
-		this.cargo = cargo;
 	}
 
 
@@ -164,8 +152,6 @@ public abstract class AbstractPlane {
 			return false;
 		if (cruiseSpeed != other.cruiseSpeed)
 			return false;
-		if (!Arrays.equals(cargo, other.cargo))
-			return false;
 		return true;
 	}
 
@@ -173,7 +159,7 @@ public abstract class AbstractPlane {
 	@Override
 	public String toString() {
 		return getClass().getSimpleName() + " [id=" + id + ", manufactYear=" + manufactYear + 
-				", currentLoad=" + currentLoad + "]";
+				", currentLoad=" + currentLoad;
 	}
 
 
