@@ -57,7 +57,7 @@ public abstract class Airliner extends AbstractPlane{
 	
 	@Override
 	public String toString() {
-		int pasNum = 0;
+		int pasNum = 0; //проверку добавил из-за пустого конструктора, в сигнатуре основного конструктора прописан массив passengers
 		if(passengers != null) {
 			pasNum = passengers.length;
 		}
