@@ -21,9 +21,7 @@ public abstract class Plane {
 	 */
 	
 	
-	public Plane() {
-		
-	}
+	public Plane() {  }
 	
 	public Plane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
 			int fuelConsumption) {
