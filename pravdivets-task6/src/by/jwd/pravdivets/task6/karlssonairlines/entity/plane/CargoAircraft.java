@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.entity;
+package by.jwd.pravdivets.task6.karlssonairlines.entity.plane;
 
 import java.io.Serializable;
 

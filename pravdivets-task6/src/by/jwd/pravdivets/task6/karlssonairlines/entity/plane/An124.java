@@ -2,7 +2,6 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity.plane;
 //источник - https://ru.wikipedia.org/wiki/Ан-124
 import java.io.Serializable;
 
-import by.jwd.pravdivets.task6.karlssonairlines.entity.CargoAircraft;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 
 @SuppressWarnings("serial")
