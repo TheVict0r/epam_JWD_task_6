@@ -15,7 +15,7 @@ public class CargoLoader {
 
 	
 	public Passenger[] makePassengersPool(int businessNumber, int economyNumber, 
-			double businessTicketPrice, double economyTicketPrice) {
+			double businessPrice, double economyPrice) {
 		
 		int totalPassengers = businessNumber + economyNumber;
 		
@@ -25,10 +25,10 @@ public class CargoLoader {
 			Passenger passenger;
 			
 			if (i <= businessNumber) {
-				passenger = new Passenger(i, businessTicketPrice, true);
+				passenger = new Passenger(i, businessPrice, true);
 				passenger.setWeight(passenger.getWeight() + LUGGAGE_WEIGHT_BUSINESS);
 			} else {
-				passenger = new Passenger(i, economyTicketPrice, false);
+				passenger = new Passenger(i, economyPrice, false);
 				passenger.setWeight(passenger.getWeight() + LUGGAGE_WEIGHT_ECONOMY);
 			}
 			
@@ -43,17 +43,13 @@ public class CargoLoader {
 	
 	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException, CargoOverloadException {
 		
-		if (airliner == null) {
-			throw new NullPlaneException("Undefined plane " + airliner, new NullPointerException());
-		}
-		
-		if (pool == null) {
-			throw new NullCargoException("Undefined cargo " + pool, new NullPointerException());
-		}
+		Checks.plainCheck(airliner);
+		Checks.passengersCheck(pool);
 		
 		if (pool.length > airliner.getPassengers().length) {
 			throw new CargoOverloadException("Too much passengers for this plane");
 		}
+		
 		
 		for (int i = 0; i < pool.length; i++) {
 			airliner.getPassengers()[i] = pool[i];
@@ -61,7 +57,14 @@ public class CargoLoader {
 	}
 	
 	
-	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) {
+	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) throws NullPlaneException, NullCargoException, CargoOverloadException {
+		Checks.plainCheck(cargoAircraft);
+		Checks.cargoCheck(shipment);
+		
+		if(shipment.getWeight() > cargoAircraft.getMaxLoad()) {
+			throw new CargoOverloadException("The shipment is too heavy for this plane.");
+		}
+		
 		cargoAircraft.setShipment(shipment);
 	}
 	
