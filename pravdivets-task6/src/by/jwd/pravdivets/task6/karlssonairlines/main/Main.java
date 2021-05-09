@@ -1,7 +1,6 @@
 package by.jwd.pravdivets.task6.karlssonairlines.main;
 
-
-import java.io.FileNotFoundException;
+import java.util.Collections;
 import java.util.List;
 
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
@@ -13,9 +12,11 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.AircraftServices;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.AirlineCompany;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.CargoLoader;
+import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 
@@ -59,10 +60,18 @@ public class Main {
 			for(Plane plane : planes) {
 				System.out.println("******  " + plane);
 			}
-			System.out.println("Full passengers capacity is " + AircraftServices.calculatePassengersCapacity(planes));	
-		
+			System.out.println("Full passengers capacity is " + AircraftServices.calculateTotalPassengersCapacity(planes));	
+			System.out.println("Total payload is " + AircraftServices.calculateTotalPayloadLoad(planes));
 			
-		} catch (DaoException | NullPlaneException | NullCargoException | CargoOverloadException e) {
+			Collections.sort(planes, new YearComparator());
+			
+			System.out.println("**********sorted by year************");
+			for(Plane plane : planes) {
+				System.out.println("******  " + plane);
+			}
+
+			
+		} catch (DaoException | NullPlaneException | NullCargoException | CargoOverloadException | NullPlaneListException e) {
 			
 			e.printStackTrace();
 		}
