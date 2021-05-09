@@ -22,9 +22,11 @@ public class Main {
 	public static void main(String[] args) {
 		CargoLoader loader = new CargoLoader();
 		
+		System.out.println("**************Делаем грузовой самолёт*************");
+		
 		Plane an124 = PlaineFactory.getPlain(new An124Factory(1, 1990));
 		System.out.println(an124);
-		
+		System.out.println("**************Загружаем в него груз****************");
 		try {
 			loader.loadShipment(((CargoAircraft)an124), new Shipment(15, 20000, 110000));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e1) {
@@ -33,9 +35,11 @@ public class Main {
 		
 		System.out.println(an124);
 		
+		
+		System.out.println("******************Делаем пассажирский самолёт**********");
 		Plane boeing300 = PlaineFactory.getPlain(new Boeing737300Factory(6, 1999));
 		System.out.println(boeing300);
-
+		System.out.println("**************Загружаем в него пассажиров****************");
 		try {
 			loader.loadPassangers((Airliner)boeing300, (loader.makePassengersPool(45, 100, 150, 75)));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e) {
@@ -45,8 +49,8 @@ public class Main {
 		
 		System.out.println(boeing300);
 		
-		System.out.println(((Airliner)boeing300).getPassengers()[3].toString());
-		
+
+		System.out.println("************Делаем авиакомпанию - данные считываем из файла*************************");
 		Airline airline = new Airline();
 		
 		try {
