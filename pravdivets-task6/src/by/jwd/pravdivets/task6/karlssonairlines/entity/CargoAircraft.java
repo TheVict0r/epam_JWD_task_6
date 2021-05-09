@@ -1,9 +1,12 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity;
 
+import java.io.Serializable;
+
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 
 // грузовой
-public class CargoAircraft extends AbstractPlane{
+@SuppressWarnings("serial")
+public class CargoAircraft extends AbstractPlane implements Serializable{
 
 	private Shipment shipment; //груз определяем единым объектом
 	
@@ -51,5 +54,8 @@ public class CargoAircraft extends AbstractPlane{
 		return true;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return super.toString() + ", maximum load - " +  super.getMaxLoad() + "]";
+	}
 }

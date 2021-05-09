@@ -18,7 +18,28 @@ public class An124 extends CargoAircraft implements Serializable {
 		
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (getClass() != obj.getClass())
+			return false;
+		if (!super.equals(obj))
+			return false;
+		return true;
+	}
+
 	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
+
 	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 	
 }

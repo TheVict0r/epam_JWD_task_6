@@ -1,11 +1,13 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 
 //Обычный пассажирский
-public abstract class Airliner extends AbstractPlane{
+@SuppressWarnings("serial")
+public abstract class Airliner extends AbstractPlane implements Serializable{
 
 	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
