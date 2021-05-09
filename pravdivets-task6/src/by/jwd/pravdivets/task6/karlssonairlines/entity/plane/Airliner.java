@@ -9,9 +9,6 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 @SuppressWarnings("serial")
 public abstract class Airliner extends Plane implements Serializable{
 
-	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
-	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
-	 //(businessClass ? LUGGAGE_WEIGHT_BUSINESS : LUGGAGE_WEIGHT_ECONOMY)
 	
 	private Passenger[] passengers; //массив позволит работать с отдельными пассажирами в случае необходимости
 	

@@ -32,7 +32,7 @@ public abstract class Cargo implements Serializable{
 		this.id = id;
 	}
 
-	public double getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
