@@ -24,7 +24,7 @@ public class Main {
 		System.out.println(an124);
 		
 		try {
-			loader.loadShipment(((CargoAircraft)an124), new Shipment(15, 20000.256, 110000));
+			loader.loadShipment(((CargoAircraft)an124), new Shipment(15, 20000, 110000));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e1) {
 			e1.printStackTrace();
 		}

@@ -9,7 +9,7 @@ public class Shipment extends Cargo implements Serializable{
 		
 	}
 	
-	public Shipment(int id, double price, int weight) {
+	public Shipment(int id, int price, int weight) {
 		super(id, price, weight);
 	}
 
