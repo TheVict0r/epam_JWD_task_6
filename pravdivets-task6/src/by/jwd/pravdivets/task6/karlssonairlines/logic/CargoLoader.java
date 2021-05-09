@@ -10,18 +10,20 @@ public class CargoLoader {
 
 	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
+
 	
-	public Passenger[] makePassengersPool(int businessNuber, int econimyNumber, 
+	
+	public Passenger[] makePassengersPool(int businessNumber, int economyNumber, 
 			double businessTicketPrice, double economyTicketPrice) {
 		
-		int totalPassengers = businessNuber + econimyNumber;
+		int totalPassengers = businessNumber + economyNumber;
 		
 		Passenger[] pool = new Passenger[totalPassengers];
 
 		for(int i = 1; i <= totalPassengers; i++) {
 			Passenger passenger;
 			
-			if (i <= businessNuber) {
+			if (i <= businessNumber) {
 				passenger = new Passenger(i, businessTicketPrice, true);
 				passenger.setWeight(passenger.getWeight() + LUGGAGE_WEIGHT_BUSINESS);
 			} else {
@@ -29,12 +31,14 @@ public class CargoLoader {
 				passenger.setWeight(passenger.getWeight() + LUGGAGE_WEIGHT_ECONOMY);
 			}
 			
-			pool[i] = passenger;
+			pool[i-1] = passenger;
 			
 		}
 		
 		return pool;
 	}
+
+	
 	
 	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException, CargoOverloadException {
 		
