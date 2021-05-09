@@ -2,16 +2,18 @@ package by.jwd.pravdivets.task6.karlssonairlines.main;
 
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737300Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
-import by.jwd.pravdivets.task6.karlssonairlines.dao.Reader;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
+import by.jwd.pravdivets.task6.karlssonairlines.logic.Airline;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.CargoLoader;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
@@ -45,13 +47,18 @@ public class Main {
 		
 		System.out.println(((Airliner)boeing300).getPassengers()[3].toString());
 		
+		Airline airline = new Airline();
+		
 		try {
-			System.out.println(Reader.readFile());
-		} catch (FileNotFoundException e) {
+			List<Plane> planes = airline.makeAircraftFleet();
+			for(Plane plane : planes) {
+				System.out.println("******  " + plane);
+			}
+			
+		} catch (DaoException | NullPlaneException | NullCargoException | CargoOverloadException e) {
+			
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 }
