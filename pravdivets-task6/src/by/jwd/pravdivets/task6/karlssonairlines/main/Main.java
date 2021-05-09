@@ -1,9 +1,12 @@
 package by.jwd.pravdivets.task6.karlssonairlines.main;
 
 
+import java.io.FileNotFoundException;
+
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737300Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
+import by.jwd.pravdivets.task6.karlssonairlines.dao.Reader;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
@@ -41,6 +44,13 @@ public class Main {
 		System.out.println(boeing300);
 		
 		System.out.println(((Airliner)boeing300).getPassengers()[3].toString());
+		
+		try {
+			System.out.println(Reader.readFile());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 
