@@ -4,16 +4,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
+
 public class Reader {
 
-	public static String readFile() throws FileNotFoundException {
+	@SuppressWarnings("resource")
+	public static String readFile() throws DaoException  {
 
 		File file = new File("./src/by/jwd/pravdivets/task6/karlssonairlines/dao/resources/planes.txt");
 
 		StringBuilder builder = new StringBuilder();
 
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(file);
+		Scanner scanner = null;
+		try {
+			scanner = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			throw new DaoException(e);
+		}
 
 		while (scanner.hasNext()) {
 			builder.append(scanner.nextLine());
