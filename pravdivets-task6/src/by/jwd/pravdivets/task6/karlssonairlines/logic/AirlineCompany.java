@@ -35,7 +35,7 @@ public class AirlineCompany {
 		allPlanesData = dataProvider.loadData();
 		
 				
-		Pattern pattern = Pattern.compile("  ");
+		Pattern pattern = Pattern.compile("\\t");
 		
 		String[] byPlane;
 		byPlane = pattern.split(allPlanesData);
