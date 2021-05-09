@@ -14,9 +14,9 @@ public class CargoAircraft extends AbstractPlane implements Serializable{
 		
 	}
 	
-	public CargoAircraft(int id, int manufactYear, int maxLoad, int flightRange, int maxSpeed,
+	public CargoAircraft(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
 			int fuelConsumption, Shipment shipment) {
-		super(id, manufactYear, maxLoad, flightRange, maxSpeed, fuelConsumption);
+		super(id, manufactYear, maxLoad, flightRange, cruiseSpeed, fuelConsumption);
 		
 		this.shipment = shipment;
 	}
