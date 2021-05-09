@@ -1,6 +1,10 @@
 package by.jwd.pravdivets.task6.karlssonairlines.logic;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
+import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
+import by.jwd.pravdivets.task6.karlssonairlines.logic.exception.NullPlaneException;
 
 public class CargoLoader {
 
@@ -30,6 +34,26 @@ public class CargoLoader {
 		}
 		
 		return pool;
+	}
+	
+	public void loadPassangers(Airliner airliner, Passenger[] passangers) throws NullPlaneException, NullCargoException, CargoOverloadException {
+		
+		if (airliner == null) {
+			throw new NullPlaneException("Undefined plane " + airliner, new NullPointerException());
+		}
+		
+		if (passangers == null) {
+			throw new NullCargoException("Undefined cargo " + passangers, new NullPointerException());
+		}
+		
+		if (passangers.length > airliner.getPassengers().length) {
+			throw new CargoOverloadException("Too much passengers for this plane");
+		}
+		
+		for (int i = 0; i < passangers.length; i++) {
+			airliner.getPassengers()[i] = passangers[i];
+		}
+		
 	}
 	
 	
