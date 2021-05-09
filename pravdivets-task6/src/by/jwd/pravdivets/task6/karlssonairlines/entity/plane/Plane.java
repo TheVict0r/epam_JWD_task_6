@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Cargo;
 
-public abstract class AbstractPlane {
+public abstract class Plane {
 
 	private int id;
 	private int manufactYear;
@@ -25,11 +25,11 @@ public abstract class AbstractPlane {
 	}
 
 	
-	public AbstractPlane() {
+	public Plane() {
 		
 	}
 	
-	public AbstractPlane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
+	public Plane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
 			int fuelConsumption) {
 		this.id = id;
 		this.manufactYear = manufactYear;
@@ -139,7 +139,7 @@ public abstract class AbstractPlane {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AbstractPlane other = (AbstractPlane) obj;
+		Plane other = (Plane) obj;
 		if (flightRange != other.flightRange)
 			return false;
 		if (fuelConsumption != other.fuelConsumption)

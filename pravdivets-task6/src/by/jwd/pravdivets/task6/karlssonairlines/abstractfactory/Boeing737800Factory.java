@@ -1,6 +1,6 @@
 package by.jwd.pravdivets.task6.karlssonairlines.abstractfactory;
 
-import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.AbstractPlane;
+import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Boeing737800;
 
 public class Boeing737800Factory implements PlaneAbstractFactory {
@@ -14,7 +14,7 @@ public class Boeing737800Factory implements PlaneAbstractFactory {
 	}
 	
 	@Override
-	public AbstractPlane createPlane() {
+	public Plane createPlane() {
 		
 		return new Boeing737800(id, manufactYear);
 	}

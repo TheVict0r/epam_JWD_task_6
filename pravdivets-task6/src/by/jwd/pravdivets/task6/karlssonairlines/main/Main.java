@@ -2,7 +2,7 @@ package by.jwd.pravdivets.task6.karlssonairlines.main;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
-import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.AbstractPlane;
+import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.An124;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Boeing737300;
@@ -27,7 +27,7 @@ public class Main {
 		Airliner boeing300 = new Boeing737300(5, 1988);
 		System.out.println(boeing300);
 		
-		AbstractPlane an124 = new An124(1, 1990, new Shipment());
+		Plane an124 = new An124(1, 1990, new Shipment());
 		System.out.println(an124);
 	}
 

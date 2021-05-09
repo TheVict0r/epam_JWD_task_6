@@ -5,6 +5,7 @@ import java.io.Serializable;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 
 //источник https://www.airlines-inform.ru/commercial-aircraft/boeing-737-500.html
+@SuppressWarnings("serial")
 public class Boeing737500 extends Airliner  implements Serializable {
 
 	public Boeing737500() {
