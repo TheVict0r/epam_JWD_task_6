@@ -28,7 +28,6 @@ public class Main {
 		
 		System.out.println(an124);
 		
-		
 		Plane boeing300 = PlaineFactory.getPlain(new Boeing737300Factory(6, 1999));
 		System.out.println(boeing300);
 

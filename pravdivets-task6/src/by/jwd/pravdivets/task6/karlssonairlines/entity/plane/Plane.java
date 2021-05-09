@@ -20,10 +20,6 @@ public abstract class Plane {
 	 * Именно груз обуславливает назначение самолета и его технические характеристики. 
 	 */
 	
-	public int getId() {
-		return id;
-	}
-
 	
 	public Plane() {
 		
@@ -39,7 +35,12 @@ public abstract class Plane {
 		this.fuelConsumption = fuelConsumption;
 	}
 
+	
+	public int getId() {
+		return id;
+	}
 
+	
 	public int getManufactYear() {
 		return manufactYear;
 	}
