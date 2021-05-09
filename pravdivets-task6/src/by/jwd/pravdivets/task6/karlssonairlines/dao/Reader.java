@@ -19,7 +19,7 @@ public class Reader {
 		try {
 			scanner = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			throw new DaoException(e);
+			throw new DaoException("Data file not found", e);
 		}
 
 		while (scanner.hasNext()) {
