@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.logic.exception;
+package by.jwd.pravdivets.task6.karlssonairlines.exception;
 
 @SuppressWarnings("serial")
 public class NullPlaneException extends Exception {
