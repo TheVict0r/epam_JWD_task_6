@@ -9,8 +9,11 @@ public class An124 extends CargoAircraft implements Serializable {
 
 	public An124() { }
 
+	
+	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
+	они в любом случае остаются неизменными*/
 	public An124(int id, int manufactYear) {
-		super(id, manufactYear, 120_000, 5400, 825, 12600);
+		super(id, manufactYear, 120_000, 5400, 825, 12_600);
 	}
 
 	@Override

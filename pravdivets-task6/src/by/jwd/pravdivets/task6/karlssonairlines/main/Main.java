@@ -31,15 +31,14 @@ public class Main {
 		Plane boeing300 = PlaineFactory.getPlain(new Boeing737300Factory(6, 1999));
 		System.out.println(boeing300);
 
-		
-		
-		
 		try {
 			loader.loadPassangers((Airliner)boeing300, (loader.makePassengersPool(45, 100, 150, 75)));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e) {
 			
 			e.printStackTrace();
 		}
+		
+		System.out.println(boeing300);
 		
 		System.out.println(((Airliner)boeing300).getPassengers()[3].toString());
 		

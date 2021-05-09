@@ -54,6 +54,18 @@ public class CargoLoader {
 		for (int i = 0; i < pool.length; i++) {
 			airliner.getPassengers()[i] = pool[i];
 		}
+		
+		airliner.setCurrentPassangersNumber(pool.length);
+		
+		int totalWeight = 0;
+		
+		for(Passenger passenger : pool) {
+			totalWeight += passenger.getWeight();
+		}
+		
+		airliner.setCurrentLoad(totalWeight);
+		
+		
 	}
 	
 	

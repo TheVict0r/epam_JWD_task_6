@@ -1,9 +1,5 @@
 package by.jwd.pravdivets.task6.karlssonairlines.entity.plane;
 
-import java.util.Arrays;
-
-import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Cargo;
-
 public abstract class Plane {
 
 	private int id;
@@ -21,7 +17,7 @@ public abstract class Plane {
 	 */
 	
 	
-	public Plane() {  }
+	public Plane() {  };
 	
 	public Plane(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
 			int fuelConsumption) {
@@ -79,44 +75,34 @@ public abstract class Plane {
 		this.manufactYear = manufactYear;
 	}
 
-
-	public void setMaxLoad(int maxLoad) {
-		this.maxLoad = maxLoad;
-	}
-
-
 	public void setCurrentLoad(int currentLoad) {
 		this.currentLoad = currentLoad;
 	}
 	
+//  сеттеры ниже убрал намеренно - эти характеристики у каждой конкретной модели 
+//  задаются конструктором и должны оставаться неизменными
 	
-	public void setFlightRange(int flightRange) {
-		this.flightRange = flightRange;
-	}
-
-
-	public void setCruiseSpeed(int cruiseSpeed) {
-		this.cruiseSpeed = cruiseSpeed;
-	}
-
-
-	public void setFuelConsumption(int fuelConsumption) {
-		this.fuelConsumption = fuelConsumption;
-	}
+//	public void setMaxLoad(int maxLoad) {
+//		this.maxLoad = maxLoad;
+//	}
+//
+//	public void setFlightRange(int flightRange) {
+//		this.flightRange = flightRange;
+//	}
+//
+//	public void setCruiseSpeed(int cruiseSpeed) {
+//		this.cruiseSpeed = cruiseSpeed;
+//	}
+//
+//	public void setFuelConsumption(int fuelConsumption) {
+//		this.fuelConsumption = fuelConsumption;
+//	}
 
 	
 	public void fly() {
 		System.out.println(getClass().getSimpleName() + "ID " + id + " is flying.");
 	}
 
-	public void load() {
-		System.out.println(getClass().getSimpleName() + "ID " + id + " is loading.");
-	}
-	
-	public void unload() {
-		System.out.println(getClass().getSimpleName() + "ID " + id + " is unloading.");
-	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

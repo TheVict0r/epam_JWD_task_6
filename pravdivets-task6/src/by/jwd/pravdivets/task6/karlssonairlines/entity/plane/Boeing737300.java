@@ -7,10 +7,12 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 @SuppressWarnings("serial")
 public class Boeing737300 extends Airliner  implements Serializable {
 
+	
 	public Boeing737300() {
 	}
 
-	
+	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
+	они в любом случае остаются неизменными*/
 	public Boeing737300(int id, int manufactYear) {
 		super(id, manufactYear, 15000, 2600, 795, 2600, new Passenger[149]);
 	}

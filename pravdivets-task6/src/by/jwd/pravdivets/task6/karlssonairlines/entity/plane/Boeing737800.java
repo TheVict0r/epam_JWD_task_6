@@ -11,7 +11,9 @@ public class Boeing737800 extends Airliner implements Serializable {
 	public Boeing737800() {
 		
 	}
-	
+
+	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
+	они в любом случае остаются неизменными*/
 	public Boeing737800(int id, int manufactYear) {
 		super(id, manufactYear, 20540, 5400, 850, 2526, new Passenger[189]);
 		
