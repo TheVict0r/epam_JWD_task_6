@@ -1,9 +1,9 @@
 package by.jwd.pravdivets.task6.karlssonairlines.main;
 
+
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737300Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
-import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
@@ -11,22 +11,21 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.CargoLoader;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
-import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.An124;
-import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Boeing737300;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 
 public class Main {
 	public static void main(String[] args) {
-
+		CargoLoader loader = new CargoLoader();
 		
-
-		
-		
-		Plane an124 = new An124(1, 1990);
+		Plane an124 = PlaineFactory.getPlain(new An124Factory(1, 1990));
 		System.out.println(an124);
 		
-		Shipment shipment = new Shipment(15, 20000.256, 1000);
-		((CargoAircraft)an124).setShipment(shipment);
+		try {
+			loader.loadShipment(((CargoAircraft)an124), new Shipment(15, 20000.256, 110000));
+		} catch (NullPlaneException | NullCargoException | CargoOverloadException e1) {
+			e1.printStackTrace();
+		}
+		
 		System.out.println(an124);
 		
 		
@@ -34,9 +33,10 @@ public class Main {
 		System.out.println(boeing300);
 
 		
-		CargoLoader passengers = new CargoLoader();
+		
+		
 		try {
-			passengers.loadPassangers((Airliner)boeing300, (passengers.makePassengersPool(45, 100, 150, 75)));
+			loader.loadPassangers((Airliner)boeing300, (loader.makePassengersPool(45, 100, 150, 75)));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e) {
 			
 			e.printStackTrace();
