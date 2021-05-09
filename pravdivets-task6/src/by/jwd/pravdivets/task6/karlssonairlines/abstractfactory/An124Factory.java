@@ -8,19 +8,18 @@ public class An124Factory implements PlaneAbstractFactory{
 
 	int id; 
 	int manufactYear; 
-	Shipment shipment;
-	
-	public An124Factory(int id, int manufactYear, Shipment shipment) {
+		
+	public An124Factory(int id, int manufactYear) {
 		this.id = id;
 		this.manufactYear = manufactYear;
-		this.shipment = shipment;
+		
 	}
 	
 	
 	@Override
 	public Plane createPlane() {
 		
-		return new An124(id, manufactYear, shipment);
+		return new An124(id, manufactYear);
 	}
 	
 	

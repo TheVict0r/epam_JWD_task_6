@@ -15,10 +15,9 @@ public class CargoAircraft extends Plane implements Serializable{
 	}
 	
 	public CargoAircraft(int id, int manufactYear, int maxLoad, int flightRange, int cruiseSpeed,
-			int fuelConsumption, Shipment shipment) {
+			int fuelConsumption) {
 		super(id, manufactYear, maxLoad, flightRange, cruiseSpeed, fuelConsumption);
 		
-		this.shipment = shipment;
 	}
 
 	public Shipment getShipment() {
@@ -56,6 +55,11 @@ public class CargoAircraft extends Plane implements Serializable{
 	
 	@Override
 	public String toString() {
-		return super.toString() + ", maximum load - " +  super.getMaxLoad() + " kg]";
+		double currentLoad = 0;
+		if(shipment != null) {
+			currentLoad = shipment.getWeight(); 
+		}
+		
+		return super.toString() + ", maximum load - " +  super.getMaxLoad() + " kg, current load - " + currentLoad + " kg]";
 	}
 }
