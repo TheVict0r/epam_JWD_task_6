@@ -158,7 +158,7 @@ public abstract class AbstractPlane {
 	
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [ID = " + id + ", year of manufactory = " + manufactYear;
+		return getClass().getSimpleName() + " [ID = " + this.getId() + ", year of manufactory = " + this.getManufactYear();
 		//специально не закрывал "]", чтобы продолжить строку в производных классах.
 	}
 
