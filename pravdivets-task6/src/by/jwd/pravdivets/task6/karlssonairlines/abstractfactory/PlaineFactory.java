@@ -1,10 +1,12 @@
 package by.jwd.pravdivets.task6.karlssonairlines.abstractfactory;
 
+
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 
-public class PlaneFactory {
+public class PlaineFactory {
 	
-	public static Plane getAirliner(PlaneAbstractFactory factory) {
+	public static Plane getPlain(PlaneAbstractFactory factory) {
 		return factory.createPlane();
 	}
+	
 }

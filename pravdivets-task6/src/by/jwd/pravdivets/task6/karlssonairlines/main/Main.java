@@ -2,7 +2,7 @@ package by.jwd.pravdivets.task6.karlssonairlines.main;
 
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737300Factory;
-import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaneFactory;
+import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
@@ -37,28 +37,27 @@ public class Main {
 		
 		
 		
-		Plane an124a = PlaneFactory.getAirliner(new An124Factory(2, 1991));
+		Plane an124a = PlaineFactory.getPlain(new An124Factory(2, 1991));
 		System.out.println(an124a);
 		
 		
-		Plane boeing300a = PlaneFactory.getAirliner(new Boeing737300Factory(6, 1999));
-		System.out.println(boeing300a);
-
-		System.out.println("*********************************");
-		Airliner boeing300 = new Boeing737300(5, 1988);
+		Plane boeing300 = PlaineFactory.getPlain(new Boeing737300Factory(6, 1999));
 		System.out.println(boeing300);
+
+		
+		
 		
 		CargoLoader passengers = new CargoLoader();
 		
 		
 		try {
-			passengers.loadPassangers((Airliner)boeing300a, (passengers.makePassengersPool(45, 100, 150, 75)));
+			passengers.loadPassangers((Airliner)boeing300, (passengers.makePassengersPool(45, 100, 150, 75)));
 		} catch (NullPlaneException | NullCargoException | CargoOverloadException e) {
 			
 			e.printStackTrace();
 		}
 		
-		System.out.println(((Airliner)boeing300a).getPassengers()[3].toString());
+		System.out.println(((Airliner)boeing300).getPassengers()[3].toString());
 		
 	}
 

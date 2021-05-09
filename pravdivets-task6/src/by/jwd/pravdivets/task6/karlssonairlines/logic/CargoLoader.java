@@ -1,7 +1,9 @@
 package by.jwd.pravdivets.task6.karlssonairlines.logic;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
+import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
+import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.exception.NullPlaneException;
@@ -11,7 +13,6 @@ public class CargoLoader {
 	public final int LUGGAGE_WEIGHT_BUSINESS = 32; //по данным Белавиа
 	public final int LUGGAGE_WEIGHT_ECONOMY = 23; //по данным Белавиа
 
-	
 	
 	public Passenger[] makePassengersPool(int businessNumber, int economyNumber, 
 			double businessTicketPrice, double economyTicketPrice) {
@@ -57,8 +58,13 @@ public class CargoLoader {
 		for (int i = 0; i < pool.length; i++) {
 			airliner.getPassengers()[i] = pool[i];
 		}
-		
 	}
+	
+	
+	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) {
+		cargoAircraft.setShipment(shipment);
+	}
+	
 	
 	
 }
