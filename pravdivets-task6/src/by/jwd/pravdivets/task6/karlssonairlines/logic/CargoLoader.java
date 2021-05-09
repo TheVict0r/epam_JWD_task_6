@@ -36,22 +36,22 @@ public class CargoLoader {
 		return pool;
 	}
 	
-	public void loadPassangers(Airliner airliner, Passenger[] passangers) throws NullPlaneException, NullCargoException, CargoOverloadException {
+	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException, CargoOverloadException {
 		
 		if (airliner == null) {
 			throw new NullPlaneException("Undefined plane " + airliner, new NullPointerException());
 		}
 		
-		if (passangers == null) {
-			throw new NullCargoException("Undefined cargo " + passangers, new NullPointerException());
+		if (pool == null) {
+			throw new NullCargoException("Undefined cargo " + pool, new NullPointerException());
 		}
 		
-		if (passangers.length > airliner.getPassengers().length) {
+		if (pool.length > airliner.getPassengers().length) {
 			throw new CargoOverloadException("Too much passengers for this plane");
 		}
 		
-		for (int i = 0; i < passangers.length; i++) {
-			airliner.getPassengers()[i] = passangers[i];
+		for (int i = 0; i < pool.length; i++) {
+			airliner.getPassengers()[i] = pool[i];
 		}
 		
 	}
