@@ -18,8 +18,7 @@ public abstract class Cargo implements Serializable{
 	}
 
 	public Cargo(int id, double price, int weight) {
-		this.id = id;
-		this.price = price;
+		this(id, price);
 		this.weight = weight;
 
 	}
@@ -89,7 +88,7 @@ public abstract class Cargo implements Serializable{
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + ": [id - " + id + ", weight - " + weight + ", price - " + price; //специально не закрывал "]", чтобы продолжить строку в производных классах.
+		return getClass().getSimpleName() + ": [ID - " + id + ", weight - " + weight + ", price - " + price; //специально не закрывал "]", чтобы продолжить строку в производных классах.
 	}
 
 }

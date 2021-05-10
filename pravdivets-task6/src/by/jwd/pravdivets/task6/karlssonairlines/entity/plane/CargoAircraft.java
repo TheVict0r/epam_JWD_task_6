@@ -6,7 +6,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 
 // грузовой
 @SuppressWarnings("serial")
-public class CargoAircraft extends Plane implements Serializable{
+public abstract class CargoAircraft extends Plane implements Serializable{
 
 	private Shipment shipment; //груз определяем единым объектом
 	
