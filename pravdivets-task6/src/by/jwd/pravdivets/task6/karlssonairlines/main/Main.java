@@ -1,6 +1,5 @@
 package by.jwd.pravdivets.task6.karlssonairlines.main;
 
-import java.util.Collections;
 import java.util.List;
 
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.An124Factory;
