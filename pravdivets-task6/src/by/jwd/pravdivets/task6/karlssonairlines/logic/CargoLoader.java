@@ -69,7 +69,6 @@ public class CargoLoader {
 		Checks.plainCheck(cargoAircraft);
 		Checks.cargoCheck(shipment);
 		
-		
 		cargoAircraft.setShipment(shipment);
 	}
 	
