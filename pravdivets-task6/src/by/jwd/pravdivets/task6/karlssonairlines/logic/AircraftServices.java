@@ -1,11 +1,13 @@
 package by.jwd.pravdivets.task6.karlssonairlines.logic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException;
+import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
 
 public class AircraftServices {
 
@@ -43,5 +45,7 @@ public class AircraftServices {
 		return result;
 	}
 	
-	
+	public static void sortByYear(List<Plane> planes){
+		Collections.sort(planes, new YearComparator());
+	}
 }

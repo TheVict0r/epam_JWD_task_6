@@ -62,10 +62,14 @@ public class Main {
 			}
 			System.out.println("Full passengers capacity is " + AircraftServices.calculateTotalPassengersCapacity(planes));	
 			System.out.println("Total payload is " + AircraftServices.calculateTotalPayloadLoad(planes));
+			System.out.println("Planes found by FuelConsumption 2300 - 2590:");
+			System.out.println(AircraftServices.findByFuelConsumption(planes, 2300, 2590));
 			
-			Collections.sort(planes, new YearComparator());
 			
 			System.out.println("**********sorted by year************");
+			
+			AircraftServices.sortByYear(planes);
+			
 			for(Plane plane : planes) {
 				System.out.println("******  " + plane);
 			}

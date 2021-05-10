@@ -8,7 +8,7 @@ public class YearComparator implements Comparator<Plane> {
 
 	@Override
 	public int compare(Plane o1, Plane o2) {
-		return o1.getManufactYear() - o1.getManufactYear();
+		return o1.getManufactYear() - o2.getManufactYear();
 	}
 
 }
