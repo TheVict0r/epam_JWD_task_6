@@ -2,6 +2,7 @@ package by.jwd.pravdivets.task6.karlssonairlines.logic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
@@ -45,7 +46,17 @@ public class AircraftServices {
 		return result;
 	}
 	
-	public static void sortByYear(List<Plane> planes){
-		Collections.sort(planes, new YearComparator());
+	public static void sortByOne(List<Plane> planes, Comparator<Plane> comparator) throws NullPlaneListException{
+		Checks.planeListCheck(planes);
+		Collections.sort(planes, comparator);
 	}
+	
+	public static void sortByTwo(List<Plane> planes, Comparator<Plane> comparator1, Comparator<Plane> comparator2) throws NullPlaneListException{
+		Checks.planeListCheck(planes);
+		Comparator<Plane> comparator = comparator1.thenComparing(comparator2);
+		Collections.sort(planes, comparator);
+	}
+	
+	
+	
 }

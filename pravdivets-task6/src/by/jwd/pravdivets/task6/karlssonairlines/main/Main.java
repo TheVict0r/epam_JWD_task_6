@@ -16,6 +16,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException
 import by.jwd.pravdivets.task6.karlssonairlines.logic.AircraftServices;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.AirlineCompany;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.CargoLoader;
+import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.IdComparator;
 import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
@@ -68,8 +69,14 @@ public class Main {
 			
 			System.out.println("**********sorted by year************");
 			
-			AircraftServices.sortByYear(planes);
+			AircraftServices.sortByOne(planes, new YearComparator());
 			
+			for(Plane plane : planes) {
+				System.out.println("******  " + plane);
+			}
+
+			AircraftServices.sortByTwo(planes, new YearComparator(), new IdComparator());
+			System.out.println("**********sorted by year and ID ************");
 			for(Plane plane : planes) {
 				System.out.println("******  " + plane);
 			}
