@@ -67,11 +67,15 @@ public class AirlineCompany {
 	}
 
 	
-	private int[] parseForPlane(String[] onePlane) {
+	private int[] parseForPlane(String[] onePlane) throws InvalidPlaneDataException {
 		int[] result = new int[6];
 		
 		for(int i = 0; i < result.length; i++) {
+			try {
 			result[i] = Integer.parseInt(onePlane[i+1]);
+			} catch (NumberFormatException e) {
+				throw new InvalidPlaneDataException("Not integer data for plane - " + onePlane[i+1], e);
+			}
 		}
 		return result;
 	}
