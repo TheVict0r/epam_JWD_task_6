@@ -62,5 +62,4 @@ public class Passenger extends Cargo implements Serializable{
 		return super.toString() + ", " + (businessClass ? "business class" : "economy class") + "]";
 	}
 	
-	
 }

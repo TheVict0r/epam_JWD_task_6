@@ -25,9 +25,9 @@ public class Reader {
 		while (scanner.hasNext()) {
 			builder.append(scanner.nextLine());
 		}
-		
+
 		String result = new String(builder);
-		
+
 		return result;
 
 	}

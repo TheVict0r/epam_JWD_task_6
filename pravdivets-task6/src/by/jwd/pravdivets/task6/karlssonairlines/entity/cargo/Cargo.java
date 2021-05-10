@@ -92,6 +92,4 @@ public abstract class Cargo implements Serializable{
 		return getClass().getSimpleName() + ": [id - " + id + ", weight - " + weight + ", price - " + price; //специально не закрывал "]", чтобы продолжить строку в производных классах.
 	}
 
-
-	
 }

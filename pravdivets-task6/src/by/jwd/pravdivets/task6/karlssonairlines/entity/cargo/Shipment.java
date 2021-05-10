@@ -18,5 +18,4 @@ public class Shipment extends Cargo implements Serializable{
 		return super.toString() + "]";
 	}
 	
-	
 }

@@ -1,6 +1,5 @@
 package by.jwd.pravdivets.task6.karlssonairlines.abstractfactory;
 
-import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.An124;
 

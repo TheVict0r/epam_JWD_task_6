@@ -15,7 +15,6 @@ public class Boeing737800Factory implements PlaneAbstractFactory {
 	
 	@Override
 	public Plane createPlane() {
-		
 		return new Boeing737800(id, manufactYear);
 	}
 

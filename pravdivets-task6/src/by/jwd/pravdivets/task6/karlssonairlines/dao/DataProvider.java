@@ -6,10 +6,11 @@ public class DataProvider implements PlanesDataLoader  {
 	
 	//singleton
 	
-	private DataProvider(){}
-	
+	private DataProvider() {
+	}
+
 	private static DataProvider instance;
-	
+
 	public static synchronized DataProvider getInstance() {
 		if (instance == null) {
 			return new DataProvider();
