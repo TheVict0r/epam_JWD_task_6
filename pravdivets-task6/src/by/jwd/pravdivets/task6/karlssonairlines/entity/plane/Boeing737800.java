@@ -14,8 +14,14 @@ public class Boeing737800 extends Airliner implements Serializable {
 
 	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
 	они в любом случае остаются неизменными*/
+	private final static int MAX_LOAD  = 20540;
+	private final static int FLIGHT_RANGE = 5400; 
+	private final static int CRUISE_SPEED = 850;
+	private final static int FUEL_CONSUMPTION = 2526; 
+	private final static Passenger[] PASSENGERS = new Passenger[189];
+
 	public Boeing737800(int id, int manufactYear) {
-		super(id, manufactYear, 20540, 5400, 850, 2526, new Passenger[189]);
+		super(id, manufactYear, MAX_LOAD, FLIGHT_RANGE, CRUISE_SPEED, FUEL_CONSUMPTION, PASSENGERS);
 		
 	}
 	

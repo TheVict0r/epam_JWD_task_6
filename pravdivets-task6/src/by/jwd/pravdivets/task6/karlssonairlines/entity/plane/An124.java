@@ -12,8 +12,14 @@ public class An124 extends CargoAircraft implements Serializable {
 	
 	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
 	они в любом случае остаются неизменными*/
+	private final static int MAX_LOAD  = 120_000;
+	private final static int FLIGHT_RANGE = 5400; 
+	private final static int CRUISE_SPEED = 825;
+	private final static int FUEL_CONSUMPTION = 12_600; 
+
+	
 	public An124(int id, int manufactYear) {
-		super(id, manufactYear, 120_000, 5400, 825, 12_600);
+		super(id, manufactYear, MAX_LOAD, FLIGHT_RANGE, CRUISE_SPEED, FUEL_CONSUMPTION);
 	}
 
 	@Override
