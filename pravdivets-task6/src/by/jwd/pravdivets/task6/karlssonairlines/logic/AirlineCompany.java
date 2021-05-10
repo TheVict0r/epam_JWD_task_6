@@ -28,11 +28,10 @@ public class AirlineCompany {
 	
 	public List<Plane> makeAircraftFleet() throws DaoException, NullPlaneException, NullCargoException, CargoOverloadException, InvalidPlaneDataException{
 	
-		String[] byPlane;
-		
-		byPlane = prepareDataByPlane();
-		
 		List<Plane> allPlanes = new ArrayList<>();
+		
+		String[] byPlane;
+		byPlane = prepareDataByPlane();
 		
 		for(String unit : byPlane) {
 			String [] onePlane;
