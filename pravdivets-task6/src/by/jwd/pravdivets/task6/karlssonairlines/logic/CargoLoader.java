@@ -49,13 +49,7 @@ public class CargoLoader {
 		if (pool.length > airliner.getPassengers().length) {
 			throw new CargoOverloadException("Too much passengers for this plane");
 		}
-		
-		
-		for (int i = 0; i < pool.length; i++) {
-			airliner.getPassengers()[i] = pool[i];
-		}
-		
-		airliner.setCurrentPassangersNumber(pool.length);
+	
 		
 		int totalWeight = 0;
 		
@@ -63,8 +57,19 @@ public class CargoLoader {
 			totalWeight += passenger.getWeight();
 		}
 		
-		airliner.setCurrentLoad(totalWeight);
-		
+		if (totalWeight <= airliner.getMaxLoad()) {
+			airliner.setCurrentLoad(totalWeight);
+
+			for (int i = 0; i < pool.length; i++) {
+				airliner.getPassengers()[i] = pool[i];
+			}
+
+			airliner.setCurrentPassangersNumber(pool.length);
+
+		} else {
+			throw new CargoOverloadException("The passengers are too heavy for this plane");
+		}   // ситуация чисто теоретическая - все нормативы и характеристики моделей
+		   // самолетов брал у Белавиа, а они как-то летают без таких проблем		
 		
 	}
 	
