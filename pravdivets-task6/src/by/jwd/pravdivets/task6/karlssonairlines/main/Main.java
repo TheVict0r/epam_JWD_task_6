@@ -7,7 +7,6 @@ import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737300Fact
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
-import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.InvalidPlaneDataException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
@@ -32,7 +31,7 @@ public class Main {
 		System.out.println("**************Загружаем в него груз****************");
 		try {
 			loader.loadShipment(((CargoAircraft)an124), new Shipment(15, 20000, 110000));
-		} catch (NullPlaneException | NullCargoException | CargoOverloadException e1) {
+		} catch (NullPlaneException | NullCargoException  e1) {
 			e1.printStackTrace();
 		}
 		
@@ -45,7 +44,7 @@ public class Main {
 		System.out.println("**************Загружаем в него пассажиров****************");
 		try {
 			loader.loadPassangers((Airliner)boeing300, (loader.makePassengersPool(45, 100, 150, 75)));
-		} catch (NullPlaneException | NullCargoException | CargoOverloadException e) {
+		} catch (NullPlaneException | NullCargoException  e) {
 			
 			e.printStackTrace();
 		}
@@ -82,7 +81,7 @@ public class Main {
 			}
 
 			
-		} catch (DaoException | NullPlaneException | NullCargoException | CargoOverloadException | NullPlaneListException | InvalidPlaneDataException e) {
+		} catch (DaoException | NullPlaneException | NullCargoException | NullPlaneListException | InvalidPlaneDataException e) {
 			
 			e.printStackTrace();
 		}

@@ -4,7 +4,6 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
-import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 
@@ -41,15 +40,11 @@ public class CargoLoader {
 
 	
 	
-	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException, CargoOverloadException {
+	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException {
 		
 		Checks.plainCheck(airliner);
 		Checks.passengersCheck(pool);
 		
-		if (pool.length > airliner.getPassengers().length) {
-			throw new CargoOverloadException("Too much passengers for this plane");
-		}
-	
 		
 		int totalWeight = 0;
 		
@@ -57,7 +52,7 @@ public class CargoLoader {
 			totalWeight += passenger.getWeight();
 		}
 		
-		if (totalWeight <= airliner.getMaxLoad()) {
+		
 			airliner.setCurrentLoad(totalWeight);
 
 			for (int i = 0; i < pool.length; i++) {
@@ -66,21 +61,14 @@ public class CargoLoader {
 
 			airliner.setCurrentPassangersNumber(pool.length);
 
-		} else {
-			throw new CargoOverloadException("The passengers are too heavy for this plane");
-		}   // ситуация чисто теоретическая - все нормативы и характеристики моделей
-		   // самолетов брал у Белавиа, а они как-то летают без таких проблем		
 		
 	}
 	
 	
-	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) throws NullPlaneException, NullCargoException, CargoOverloadException {
+	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) throws NullPlaneException, NullCargoException {
 		Checks.plainCheck(cargoAircraft);
 		Checks.cargoCheck(shipment);
 		
-		if(shipment.getWeight() > cargoAircraft.getMaxLoad()) {
-			throw new CargoOverloadException("The shipment is too heavy for this plane.");
-		}
 		
 		cargoAircraft.setShipment(shipment);
 	}

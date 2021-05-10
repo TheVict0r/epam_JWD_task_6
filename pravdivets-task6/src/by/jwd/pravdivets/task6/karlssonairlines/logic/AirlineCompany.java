@@ -15,7 +15,6 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
-import by.jwd.pravdivets.task6.karlssonairlines.exception.CargoOverloadException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.InvalidPlaneDataException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
@@ -26,7 +25,7 @@ public class AirlineCompany {
 	CargoLoader loader = new CargoLoader();
 
 	
-	public List<Plane> makeAircraftFleet() throws DaoException, NullPlaneException, NullCargoException, CargoOverloadException, InvalidPlaneDataException{
+	public List<Plane> makeAircraftFleet() throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException{
 	
 		List<Plane> allPlanes = new ArrayList<>();
 		
@@ -82,13 +81,13 @@ public class AirlineCompany {
 	}
 
 	
-	private Plane makeAirliner(int[] dataForPlane, PlaneAbstractFactory factory) throws NullPlaneException, NullCargoException, CargoOverloadException {
+	private Plane makeAirliner(int[] dataForPlane, PlaneAbstractFactory factory) throws NullPlaneException, NullCargoException {
 		Plane plane = PlaineFactory.getPlain(factory);
 		loader.loadPassangers((Airliner)plane, (loader.makePassengersPool(dataForPlane[2], dataForPlane[3], dataForPlane[4], dataForPlane[5])));
 		return plane;
 	}
 	
-	private Plane makeCargoAircraft(int[] dataForPlane, PlaneAbstractFactory factory) throws NullPlaneException, NullCargoException, CargoOverloadException  {
+	private Plane makeCargoAircraft(int[] dataForPlane, PlaneAbstractFactory factory) throws NullPlaneException, NullCargoException  {
 		Plane plane = PlaineFactory.getPlain(factory);
 		loader.loadShipment(((CargoAircraft)plane), new Shipment(dataForPlane[2], dataForPlane[3], dataForPlane[4]));
 		return plane;
