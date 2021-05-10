@@ -7,7 +7,7 @@ public class Passenger extends Cargo implements Serializable{
 
 	boolean businessClass;
 	
-	public final int HUMAN_WEIGHT_AVERAGE = 80;//нашёл в интернете
+	public final int HUMAN_WEIGHT_AVERAGE = 70;//нашёл в интернете
 	
 	public Passenger() { }
 	
