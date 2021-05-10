@@ -1,5 +1,6 @@
 package by.jwd.pravdivets.task6.karlssonairlines.exception;
 
+@SuppressWarnings("serial")
 public class CargoOverloadException extends Exception {
 	
 	public CargoOverloadException() { 	}
