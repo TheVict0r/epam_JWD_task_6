@@ -34,6 +34,7 @@ public class AirlineCompany {
 		byPlane = prepareDataByPlane();
 		
 		for(String unit : byPlane) {
+			
 			String [] onePlane;
 			onePlane = unit.split("\\s+");
 
@@ -70,11 +71,11 @@ public class AirlineCompany {
 	private int[] parseForPlane(String[] onePlane) throws InvalidPlaneDataException {
 		int[] result = new int[6];
 		
-		for(int i = 0; i < result.length; i++) {
+		for (int i = 0; i < result.length; i++) {
 			try {
-			result[i] = Integer.parseInt(onePlane[i+1]);
+				result[i] = Integer.parseInt(onePlane[i + 1]);
 			} catch (NumberFormatException e) {
-				throw new InvalidPlaneDataException("Not integer data for plane - " + onePlane[i+1], e);
+				throw new InvalidPlaneDataException("Provided data must be integer instead of - " + onePlane[i + 1], e);
 			}
 		}
 		return result;
