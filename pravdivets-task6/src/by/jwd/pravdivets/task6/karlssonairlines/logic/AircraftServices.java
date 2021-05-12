@@ -13,7 +13,11 @@ import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
 public class AircraftServices {
 
 	public static int calculateTotalPassengersCapacity(List<Plane> planes) throws NullPlaneListException {
-		Checks.planeListCheck(planes);
+
+		if (planes == null) {
+			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
+		}
+		
 		int capacity = 0;
 		
 		for(Plane plane : planes) {
@@ -25,7 +29,9 @@ public class AircraftServices {
 	}
 	
 	public static int calculateTotalPayloadLoad(List<Plane> planes) throws NullPlaneListException {
-		Checks.planeListCheck(planes);
+		if (planes == null) {
+			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
+		}
 		
 		int payloadLoad = 0;
 		
@@ -36,7 +42,11 @@ public class AircraftServices {
 	}
 	
 	public static List<Plane> findByFuelConsumption(List<Plane> planes, int min, int max) throws NullPlaneListException{
-		Checks.planeListCheck(planes);
+
+		if (planes == null) {
+			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
+		}
+		
 		List<Plane> result = new ArrayList<>();
 		for(Plane plane : planes) {
 			if(plane.getFuelConsumption() >= min && plane.getFuelConsumption() <= max) {
@@ -47,12 +57,20 @@ public class AircraftServices {
 	}
 	
 	public static void sortByOne(List<Plane> planes, Comparator<Plane> comparator) throws NullPlaneListException{
-		Checks.planeListCheck(planes);
+
+		if (planes == null) {
+			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
+		}
+		
 		Collections.sort(planes, comparator);
 	}
 	
 	public static void sortByTwo(List<Plane> planes, Comparator<Plane> comparator1, Comparator<Plane> comparator2) throws NullPlaneListException{
-		Checks.planeListCheck(planes);
+
+		if (planes == null) {
+			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
+		}
+		
 		Comparator<Plane> comparator = comparator1.thenComparing(comparator2);
 		Collections.sort(planes, comparator);
 	}

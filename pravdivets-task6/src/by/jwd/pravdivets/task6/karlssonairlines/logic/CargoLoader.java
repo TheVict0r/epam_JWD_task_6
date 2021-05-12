@@ -42,8 +42,13 @@ public class CargoLoader {
 	
 	public void loadPassangers(Airliner airliner, Passenger[] pool) throws NullPlaneException, NullCargoException {
 		
-		Checks.plainCheck(airliner);
-		Checks.passengersCheck(pool);
+		if (airliner == null) {
+			throw new NullPlaneException("Undefined plane " + airliner, new NullPointerException());
+		}
+		
+		if (pool == null) {
+			throw new NullCargoException("Undefined cargo " + pool, new NullPointerException());
+		}
 		
 		
 		int totalWeight = 0;
@@ -66,8 +71,14 @@ public class CargoLoader {
 	
 	
 	public void loadShipment(CargoAircraft cargoAircraft, Shipment shipment) throws NullPlaneException, NullCargoException {
-		Checks.plainCheck(cargoAircraft);
-		Checks.cargoCheck(shipment);
+		if (cargoAircraft == null) {
+			throw new NullPlaneException("Undefined plane " + cargoAircraft, new NullPointerException());
+		}
+		
+		
+		if (shipment == null) {
+			throw new NullCargoException("Undefined cargo " + shipment, new NullPointerException());
+		}
 		
 		cargoAircraft.setShipment(shipment);
 	}
