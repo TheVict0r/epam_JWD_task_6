@@ -22,6 +22,10 @@ public class DataProvider implements PlanesDataLoader  {
 	
 	@Override
 	public String loadData(String source) throws DaoException {
+	
+		if (source == null) {
+			throw new DaoException("The source was not provided");
+		}
 		
 		try {
 			return Reader.readFile(source);

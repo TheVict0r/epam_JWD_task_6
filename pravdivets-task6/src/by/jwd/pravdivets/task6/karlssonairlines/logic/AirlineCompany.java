@@ -17,6 +17,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.InvalidPlaneDataException;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.NoSourceException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 
@@ -25,8 +26,12 @@ public class AirlineCompany {
 	CargoLoader loader = new CargoLoader();
 
 	
-	public List<Plane> makeAircraftFleet(String source) throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException{
+	public List<Plane> makeAircraftFleet(String source) throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException, NoSourceException{
 	
+		if (source == null) {
+			throw new NoSourceException("The source was not provided");
+		}
+		
 		List<Plane> allPlanes = new ArrayList<>();
 		
 		String[] byPlane;

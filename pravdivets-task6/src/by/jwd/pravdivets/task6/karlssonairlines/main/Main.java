@@ -9,6 +9,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.InvalidPlaneDataException;
+import by.jwd.pravdivets.task6.karlssonairlines.exception.NoSourceException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException;
@@ -83,7 +84,7 @@ public class Main {
 			}
 
 			
-		} catch (DaoException | NullPlaneException | NullCargoException | NullPlaneListException | InvalidPlaneDataException e) {
+		} catch (DaoException | NullPlaneException | NullCargoException | NullPlaneListException | InvalidPlaneDataException | NoSourceException e) {
 			
 			e.printStackTrace();
 		}
