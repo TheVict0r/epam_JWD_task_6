@@ -12,7 +12,7 @@ public class Reader {
 	public static String readFile(String source) throws DaoException  {
 
 		if (source == null) {
-			throw new DaoException("The path was not provided");
+			throw new DaoException("The source was not provided");
 		}
 		
 		File file = new File(source);
@@ -23,7 +23,7 @@ public class Reader {
 		try {
 			scanner = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			throw new DaoException("Data file not found", e);
+			throw new DaoException("The data file was not found", e);
 		}
 
 		while (scanner.hasNext()) {
