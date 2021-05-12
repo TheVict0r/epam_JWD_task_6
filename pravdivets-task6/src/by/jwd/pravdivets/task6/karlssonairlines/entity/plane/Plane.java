@@ -79,30 +79,25 @@ public abstract class Plane {
 		this.currentLoad = currentLoad;
 	}
 	
-//  сеттеры ниже убрал намеренно - эти характеристики у каждой конкретной модели 
-//  задаются конструктором и должны оставаться неизменными
-	
-//	public void setMaxLoad(int maxLoad) {
-//		this.maxLoad = maxLoad;
-//	}
-//
-//	public void setFlightRange(int flightRange) {
-//		this.flightRange = flightRange;
-//	}
-//
-//	public void setCruiseSpeed(int cruiseSpeed) {
-//		this.cruiseSpeed = cruiseSpeed;
-//	}
-//
-//	public void setFuelConsumption(int fuelConsumption) {
-//		this.fuelConsumption = fuelConsumption;
-//	}
 
 	
-	public void fly() {
-		System.out.println(getClass().getSimpleName() + "ID " + id + " is flying.");
+	public void setMaxLoad(int maxLoad) {
+		this.maxLoad = maxLoad;
 	}
 
+	public void setFlightRange(int flightRange) {
+		this.flightRange = flightRange;
+	}
+
+	public void setCruiseSpeed(int cruiseSpeed) {
+		this.cruiseSpeed = cruiseSpeed;
+	}
+
+	public void setFuelConsumption(int fuelConsumption) {
+		this.fuelConsumption = fuelConsumption;
+	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
