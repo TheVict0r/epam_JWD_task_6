@@ -25,12 +25,12 @@ public class AirlineCompany {
 	CargoLoader loader = new CargoLoader();
 
 	
-	public List<Plane> makeAircraftFleet() throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException{
+	public List<Plane> makeAircraftFleet(String source) throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException{
 	
 		List<Plane> allPlanes = new ArrayList<>();
 		
 		String[] byPlane;
-		byPlane = prepareDataByPlane();
+		byPlane = prepareDataByPlane(source);
 		
 		for(String unit : byPlane) {
 			
@@ -52,11 +52,11 @@ public class AirlineCompany {
 		return allPlanes;
 	}
 
-	private String[] prepareDataByPlane() throws DaoException {
+	private String[] prepareDataByPlane(String source) throws DaoException {
 		DataProvider dataProvider = DataProvider.getInstance();
 		
 		String allPlanesData;
-		allPlanesData = dataProvider.loadData();
+		allPlanesData = dataProvider.loadData(source);
 		
 		Pattern pattern = Pattern.compile("\\t");
 		

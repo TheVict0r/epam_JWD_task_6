@@ -21,10 +21,10 @@ public class DataProvider implements PlanesDataLoader  {
 	
 	
 	@Override
-	public String loadData() throws DaoException {
+	public String loadData(String source) throws DaoException {
 		
 		try {
-			return Reader.readFile();
+			return Reader.readFile(source);
 		} catch (DaoException e) {
 			throw new DaoException(e);
 		}

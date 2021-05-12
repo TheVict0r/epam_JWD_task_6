@@ -9,9 +9,13 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 public class Reader {
 
 	@SuppressWarnings("resource")
-	public static String readFile() throws DaoException  {
+	public static String readFile(String source) throws DaoException  {
 
-		File file = new File("./src/by/jwd/pravdivets/task6/karlssonairlines/dao/resources/planes.txt");
+		if (source == null) {
+			throw new DaoException("The path was not provided");
+		}
+		
+		File file = new File(source);
 
 		StringBuilder builder = new StringBuilder();
 

@@ -5,6 +5,6 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 
 public interface PlanesDataLoader {
 
-	public String loadData() throws DaoException;
+	public String loadData(String source) throws DaoException;
 	
 }
