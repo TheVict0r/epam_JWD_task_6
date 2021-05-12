@@ -11,7 +11,7 @@ public class An124 extends CargoAircraft implements Serializable {
 
 	
 	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
-	они в любом случае остаются неизменными*/
+	они в любом случае должны оставаться неизменными. Однако в крайнем случае их можно изменить через сеттеры*/
 	private final static int MAX_LOAD  = 120_000;
 	private final static int FLIGHT_RANGE = 5400; 
 	private final static int CRUISE_SPEED = 825;

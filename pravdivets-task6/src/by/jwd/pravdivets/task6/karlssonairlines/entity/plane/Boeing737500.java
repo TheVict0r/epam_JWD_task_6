@@ -13,7 +13,7 @@ public class Boeing737500 extends Airliner  implements Serializable {
 	}
 
 	/*в конструкторе ниже используются объективные характеристики данной модели самолета, 
-	они в любом случае остаются неизменными*/
+	они в любом случае должны оставаться неизменными. Однако в крайнем случае их можно изменить через сеттеры*/
 	private final static int MAX_LOAD  = 14770;
 	private final static int FLIGHT_RANGE = 3400; 
 	private final static int CRUISE_SPEED = 795;
