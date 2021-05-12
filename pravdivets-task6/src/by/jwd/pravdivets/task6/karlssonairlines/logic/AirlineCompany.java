@@ -35,11 +35,7 @@ public class AirlineCompany {
 		List<Plane> allPlanes = new ArrayList<>();
 		
 		String[] byPlane = null;;
-		try {
-			byPlane = prepareDataByPlane(source);
-		} catch (DaoException e) {
-			throw new NoSourceException("The source was not provided");
-		}
+		byPlane = prepareDataByPlane(source);
 		
 		for(String unit : byPlane) {
 			
@@ -61,11 +57,15 @@ public class AirlineCompany {
 		return allPlanes;
 	}
 
-	private String[] prepareDataByPlane(String source) throws DaoException {
+	private String[] prepareDataByPlane(String source) throws NoSourceException {
 		DataProvider dataProvider = DataProvider.getInstance();
 		
-		String allPlanesData;
-		allPlanesData = dataProvider.loadData(source);
+		String allPlanesData = null;
+		try {
+			allPlanesData = dataProvider.loadData(source);
+		} catch (DaoException e) {
+			throw new NoSourceException("The source was not provided");
+		}
 		
 		Pattern pattern = Pattern.compile("\\t");
 		
