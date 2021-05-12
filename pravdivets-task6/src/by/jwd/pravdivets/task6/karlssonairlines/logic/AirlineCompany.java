@@ -26,7 +26,7 @@ public class AirlineCompany {
 	CargoLoader loader = new CargoLoader();
 
 	
-	public List<Plane> makeAircraftFleet(String source) throws DaoException, NullPlaneException, NullCargoException, InvalidPlaneDataException, NoSourceException{
+	public List<Plane> makeAircraftFleet(String source) throws  NullPlaneException, NullCargoException, InvalidPlaneDataException, NoSourceException{
 	
 		if (source == null) {
 			throw new NoSourceException("The source was not provided");
@@ -34,8 +34,12 @@ public class AirlineCompany {
 		
 		List<Plane> allPlanes = new ArrayList<>();
 		
-		String[] byPlane;
-		byPlane = prepareDataByPlane(source);
+		String[] byPlane = null;;
+		try {
+			byPlane = prepareDataByPlane(source);
+		} catch (DaoException e) {
+			throw new NoSourceException("The source was not provided");
+		}
 		
 		for(String unit : byPlane) {
 			
