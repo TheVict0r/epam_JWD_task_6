@@ -34,7 +34,7 @@ public class AirlineCompany {
 		
 		List<Plane> allPlanes = new ArrayList<>();
 		
-		String[] byPlane = null;;
+		String[] byPlane = null;
 		byPlane = prepareDataByPlane(source);
 		
 		for(String unit : byPlane) {
