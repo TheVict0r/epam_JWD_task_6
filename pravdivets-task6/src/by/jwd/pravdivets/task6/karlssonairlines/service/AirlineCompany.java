@@ -62,7 +62,6 @@ public class AirlineCompany {
 		DataProvider dataProvider = DataProvider.getInstance();
 		PlanesDataLoader loader = dataProvider.getLoader();
 		
-		
 		String allPlanesData = null;
 		try {
 			allPlanesData = loader.loadData(source);
