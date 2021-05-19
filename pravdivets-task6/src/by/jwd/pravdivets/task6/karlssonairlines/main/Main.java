@@ -55,7 +55,7 @@ public class Main {
 		System.out.println("************Делаем авиакомпанию - данные считываем из файла*************************");
 		AirlineCompany airline = new AirlineCompany();
 		
-		String source = "./src/by/jwd/pravdivets/task6/karlssonairlines/source/planes.txt";
+		String source = "./src/resource/planes.txt";
 		
 		try {
 			List<Plane> planes = airline.makeAircraftFleet(source);
