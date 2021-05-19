@@ -1,15 +1,16 @@
 package by.jwd.pravdivets.task6.karlssonairlines.dao;
 
-import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
+import by.jwd.pravdivets.task6.karlssonairlines.dao.impl.FileDataLoader;
 
-public class DataProvider implements PlanesDataLoader  {
+public class DataProvider {
 	
 	//singleton
 	
+	private static DataProvider instance;
+	private PlanesDataLoader loader = new FileDataLoader();
+	
 	private DataProvider() {
 	}
-
-	private static DataProvider instance;
 
 	public static synchronized DataProvider getInstance() {
 		if (instance == null) {
@@ -18,20 +19,16 @@ public class DataProvider implements PlanesDataLoader  {
 			return instance;
 		}
 	}
-	
-	
-	@Override
-	public String loadData(String source) throws DaoException {
-	
-		if (source == null) {
-			throw new DaoException("The source is not provided");
-		}
-		
-		try {
-			return Reader.readFile(source);
-		} catch (DaoException e) {
-			throw new DaoException(e);
-		}
+
+	public PlanesDataLoader getLoader() {
+		return loader;
 	}
+
+	public void setLoader(PlanesDataLoader loader) {
+		this.loader = loader;
+	}
+	
+	
+
 
 }
