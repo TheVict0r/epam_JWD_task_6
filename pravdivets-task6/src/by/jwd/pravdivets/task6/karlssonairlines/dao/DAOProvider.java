@@ -2,19 +2,19 @@ package by.jwd.pravdivets.task6.karlssonairlines.dao;
 
 import by.jwd.pravdivets.task6.karlssonairlines.dao.impl.FileDataLoader;
 
-public class DataProvider {
+public class DAOProvider {
 	
 	//singleton
 	
-	private static DataProvider instance;
+	private static DAOProvider instance;
 	private PlanesDataLoader loader = new FileDataLoader();
 	
-	private DataProvider() {
+	private DAOProvider() {
 	}
 
-	public static synchronized DataProvider getInstance() {
+	public static synchronized DAOProvider getInstance() {
 		if (instance == null) {
-			return new DataProvider();
+			return new DAOProvider();
 		} else {
 			return instance;
 		}

@@ -10,7 +10,7 @@ import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737500Fact
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.Boeing737800Factory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaineFactory;
 import by.jwd.pravdivets.task6.karlssonairlines.abstractfactory.PlaneAbstractFactory;
-import by.jwd.pravdivets.task6.karlssonairlines.dao.DataProvider;
+import by.jwd.pravdivets.task6.karlssonairlines.dao.DAOProvider;
 import by.jwd.pravdivets.task6.karlssonairlines.dao.PlanesDataLoader;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
@@ -59,7 +59,7 @@ public class AirlineCompany {
 	}
 
 	private String[] prepareDataByPlane(String source) throws NoSourceException {
-		DataProvider dataProvider = DataProvider.getInstance();
+		DAOProvider dataProvider = DAOProvider.getInstance();
 		PlanesDataLoader loader = dataProvider.getLoader();
 		
 		String allPlanesData = null;
