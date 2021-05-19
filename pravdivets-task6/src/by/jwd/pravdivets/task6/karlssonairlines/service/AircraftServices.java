@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.logic;
+package by.jwd.pravdivets.task6.karlssonairlines.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,7 +8,7 @@ import java.util.List;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Plane;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
+import by.jwd.pravdivets.task6.karlssonairlines.service.comparator.YearComparator;
 
 public class AircraftServices {
 

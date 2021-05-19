@@ -23,7 +23,7 @@ public class Reader {
 		try {
 			scanner = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			throw new DaoException("The data file was not found", e);
+			throw new DaoException("The data file not found", e);
 		}
 
 		while (scanner.hasNext()) {

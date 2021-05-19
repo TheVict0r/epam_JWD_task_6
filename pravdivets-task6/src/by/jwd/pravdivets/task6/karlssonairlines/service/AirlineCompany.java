@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.logic;
+package by.jwd.pravdivets.task6.karlssonairlines.service;
 
 import java.util.ArrayList;
 import java.util.List;

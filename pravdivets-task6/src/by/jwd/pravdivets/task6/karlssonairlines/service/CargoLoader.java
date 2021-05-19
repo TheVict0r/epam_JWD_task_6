@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.logic;
+package by.jwd.pravdivets.task6.karlssonairlines.service;
 
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Passenger;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.cargo.Shipment;

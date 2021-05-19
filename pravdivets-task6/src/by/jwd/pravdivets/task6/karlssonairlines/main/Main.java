@@ -12,11 +12,11 @@ import by.jwd.pravdivets.task6.karlssonairlines.exception.NoSourceException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullCargoException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneException;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.NullPlaneListException;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.AircraftServices;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.AirlineCompany;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.CargoLoader;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.IdComparator;
-import by.jwd.pravdivets.task6.karlssonairlines.logic.comparator.YearComparator;
+import by.jwd.pravdivets.task6.karlssonairlines.service.AircraftServices;
+import by.jwd.pravdivets.task6.karlssonairlines.service.AirlineCompany;
+import by.jwd.pravdivets.task6.karlssonairlines.service.CargoLoader;
+import by.jwd.pravdivets.task6.karlssonairlines.service.comparator.IdComparator;
+import by.jwd.pravdivets.task6.karlssonairlines.service.comparator.YearComparator;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.Airliner;
 import by.jwd.pravdivets.task6.karlssonairlines.entity.plane.CargoAircraft;
 

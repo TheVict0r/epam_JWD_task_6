@@ -1,4 +1,4 @@
-package by.jwd.pravdivets.task6.karlssonairlines.logic.comparator;
+package by.jwd.pravdivets.task6.karlssonairlines.service.comparator;
 
 import java.util.Comparator;
 
