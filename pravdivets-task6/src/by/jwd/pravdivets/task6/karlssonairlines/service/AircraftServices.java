@@ -27,8 +27,9 @@ public class AircraftServices {
 		}
 		return capacity;
 	}
+
 	
-	public static int calculateTotalPayloadLoad(List<Plane> planes) throws NullPlaneListException {
+	public static int calculateTotalPayload(List<Plane> planes) throws NullPlaneListException {
 		if (planes == null) {
 			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
 		}
@@ -40,6 +41,7 @@ public class AircraftServices {
 		}
 		return payloadLoad;
 	}
+
 	
 	public static List<Plane> findByFuelConsumption(List<Plane> planes, int min, int max) throws NullPlaneListException{
 
@@ -55,8 +57,9 @@ public class AircraftServices {
 	}
 		return result;
 	}
+
 	
-	public static void sortByOne(List<Plane> planes, Comparator<Plane> comparator) throws NullPlaneListException{
+	public static void sortByOneSpec(List<Plane> planes, Comparator<Plane> comparator) throws NullPlaneListException{
 
 		if (planes == null) {
 			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
@@ -64,8 +67,9 @@ public class AircraftServices {
 		
 		Collections.sort(planes, comparator);
 	}
+
 	
-	public static void sortByTwo(List<Plane> planes, Comparator<Plane> comparator1, Comparator<Plane> comparator2) throws NullPlaneListException{
+	public static void sortByTwoSpecs(List<Plane> planes, Comparator<Plane> comparator1, Comparator<Plane> comparator2) throws NullPlaneListException{
 
 		if (planes == null) {
 			throw new NullPlaneListException("The list of planes is empty " + planes, new NullPointerException());
@@ -74,7 +78,6 @@ public class AircraftServices {
 		Comparator<Plane> comparator = comparator1.thenComparing(comparator2);
 		Collections.sort(planes, comparator);
 	}
-	
 	
 	
 }

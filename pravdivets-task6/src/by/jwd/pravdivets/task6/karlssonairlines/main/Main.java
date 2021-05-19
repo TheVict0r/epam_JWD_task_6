@@ -63,20 +63,20 @@ public class Main {
 				System.out.println("******  " + plane);
 			}
 			System.out.println("Full passengers capacity is " + AircraftServices.calculateTotalPassengersCapacity(planes));	
-			System.out.println("Total payload is " + AircraftServices.calculateTotalPayloadLoad(planes));
+			System.out.println("Total payload is " + AircraftServices.calculateTotalPayload(planes));
 			System.out.println("Planes found by FuelConsumption 2300 - 2590:");
 			System.out.println(AircraftServices.findByFuelConsumption(planes, 2300, 2590));
 			
 			
 			System.out.println("**********sorted by year************");
 			
-			AircraftServices.sortByOne(planes, new YearComparator());
+			AircraftServices.sortByOneSpec(planes, new YearComparator());
 			
 			for(Plane plane : planes) {
 				System.out.println("******  " + plane);
 			}
 
-			AircraftServices.sortByTwo(planes, new YearComparator(), new IdComparator());
+			AircraftServices.sortByTwoSpecs(planes, new YearComparator(), new IdComparator());
 			System.out.println("**********sorted by year and ID ************");
 			for(Plane plane : planes) {
 				System.out.println("******  " + plane);
