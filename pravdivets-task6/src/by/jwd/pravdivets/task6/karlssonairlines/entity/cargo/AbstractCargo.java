@@ -3,21 +3,21 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity.cargo;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public abstract class Cargo implements Serializable{
+public abstract class AbstractCargo implements Serializable{
 	
 	private int id; 
 	private int weight;
 	private double price;
 		
-	public Cargo() {
+	public AbstractCargo() {
 	}
 
-	public Cargo(int id, double price) {
+	public AbstractCargo(int id, double price) {
 		this.id = id;
 		this.price = price;
 	}
 
-	public Cargo(int id, double price, int weight) {
+	public AbstractCargo(int id, double price, int weight) {
 		this(id, price);
 		this.weight = weight;
 
@@ -60,7 +60,7 @@ public abstract class Cargo implements Serializable{
 		if (this.getClass() != o.getClass()) {
 			return false;
 		}
-		Cargo unit = (Cargo) o;
+		AbstractCargo unit = (AbstractCargo) o;
 		if (this.id != unit.getId()) {
 			return false;
 		}

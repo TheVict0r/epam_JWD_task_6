@@ -3,18 +3,17 @@ package by.jwd.pravdivets.task6.karlssonairlines.entity.cargo;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Passenger extends Cargo implements Serializable{
-
-	boolean businessClass;
+public class Passenger extends AbstractCargo implements Serializable{
 	
 	public final int HUMAN_WEIGHT_AVERAGE = 70;//нашёл в интернете
+	boolean businessClass;
 	
 	public Passenger() { }
 	
 	public Passenger(int id, double ticketPrice, boolean businessClass) {
 		super(id, ticketPrice);
 		this.businessClass = businessClass;
-		super.setWeight(HUMAN_WEIGHT_AVERAGE);
+		setWeight(HUMAN_WEIGHT_AVERAGE);
 	}
 
 	public boolean isBusinessClass() {
