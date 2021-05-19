@@ -59,8 +59,8 @@ public class AirlineCompany {
 	}
 
 	private String[] prepareDataByPlane(String source) throws NoSourceException {
-		DAOProvider dataProvider = DAOProvider.getInstance();
-		PlanesDataLoader loader = dataProvider.getLoader();
+		DAOProvider provider = DAOProvider.getInstance();
+		PlanesDataLoader loader = provider.getLoader();
 		
 		String allPlanesData = null;
 		try {
