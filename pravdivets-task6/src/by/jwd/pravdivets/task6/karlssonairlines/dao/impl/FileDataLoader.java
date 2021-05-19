@@ -1,7 +1,7 @@
 package by.jwd.pravdivets.task6.karlssonairlines.dao.impl;
 
 import by.jwd.pravdivets.task6.karlssonairlines.dao.PlanesDataLoader;
-import by.jwd.pravdivets.task6.karlssonairlines.dao.Reader;
+import by.jwd.pravdivets.task6.karlssonairlines.dao.FileReader;
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 
 public class FileDataLoader implements PlanesDataLoader{
@@ -13,7 +13,7 @@ public class FileDataLoader implements PlanesDataLoader{
 		}
 
 		try {
-			return Reader.readFile(source);
+			return FileReader.readFile(source);
 		} catch (DaoException e) {
 			throw new DaoException(e);
 		}

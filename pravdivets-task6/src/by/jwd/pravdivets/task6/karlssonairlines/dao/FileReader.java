@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import by.jwd.pravdivets.task6.karlssonairlines.exception.DaoException;
 
-public class Reader {
+public class FileReader {
 
 	@SuppressWarnings("resource")
 	public static String readFile(String source) throws DaoException  {
